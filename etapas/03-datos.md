@@ -18,7 +18,20 @@ PostgreSQL local y datos sintéticos. Crea productos (ID, SKU único, cantidad e
 6. Fuerza error entre actualizar cantidad y registrar movimiento: confirma rollback de ambos. Identifica qué cambia si las dos escrituras se separan.
 
 ## Entrega y avance
-Script de migración, instrucciones para base temporal, tests de integración y reporte del experimento concurrente. La base usada en pruebas debe ser desechable y configurada por variables, no credenciales en Git. Demuestra los seis criterios.
+Script de migración, instrucciones para base temporal, tests de integración, reporte del experimento concurrente y la **ficha Feynman completa (4 pasos)** sobre transacciones, bloqueos/condiciones atómicas e idempotencia. La base usada en pruebas debe ser desechable y configurada por variables, no credenciales en Git. Demuestra los seis criterios.
+
+## Método Richard Feynman (4 pasos obligatorios)
+
+1. **Seleccionar y estudiar el concepto:** atomicidad transaccional, condiciones de carrera al descontar inventario y claves de operación para evitar dobles descuentos, estudiados en el Tutorial y la guía de aislamiento de PostgreSQL.
+2. **Enseñarlo con palabras simples (sin jerga):**
+   - Imagina una caja con 3 entradas de cine y dos taquilleros mirando la caja al mismo tiempo. Si los dos cuentan «hay 3, así que vendo 2», entre ambos prometen 4 entradas cuando solo había 3.
+   - Para evitarlo, la base de datos funciona como un turno único en la ventanilla: dice «solo resta 2 si todavía quedan 2 o más, y anota el recibo en el mismo paso». Si algo falla a mitad de camino, deshace todo como si nadie hubiera tocado la caja.
+3. **Identificar lagunas y volver a la fuente original:**
+   - *Laguna típica:* «¿Por qué leer `SELECT cantidad` en Python y luego hacer `UPDATE` falla bajo dos conexiones simultáneas, aunque una sola conexión siempre funcione?» y «¿Por qué un reintento con la misma clave no debe volver a restar?»
+   - *Regreso a la fuente:* revisa [PostgreSQL: aislamiento de transacciones](https://www.postgresql.org/docs/17/transaction-iso.html) (fenómeno *lost update* / *read committed* vs `UPDATE ... WHERE cantidad >= ...` y restricciones `UNIQUE`) para comprobar por qué la condición debe evaluarse dentro de la propia sentencia en el motor.
+4. **Simplificar y revisar con analogías:**
+   - *Analogía del billete numerado y la puerta giratoria:* una transacción es una puerta giratoria donde entran juntos el descuento y el recibo: o cruzan los dos, o ambos se quedan afuera. La clave única de operación es el número de serie del ticket: si el cliente vuelve con la misma foto del recibo porque se cortó la llamada, la taquilla reconoce el número y le muestra el mismo recibo en vez de cobrarle otra vez. (*Límite de la analogía:* niveles de aislamiento distintos en bases diferentes cambian qué filas se bloquean).
+   - *Comprobación del estudiante:* explica por escrito a alguien sin formación técnica qué ocurrió en tu prueba concurrente con dos conexiones reales y qué habría pasado si hubieras separado la resta del registro del movimiento.
 
 ## Recursos
 - [Tutorial PostgreSQL](https://www.postgresql.org/docs/17/tutorial.html) — consultas, integridad y transacciones; consulta la versión instalada.

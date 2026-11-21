@@ -21,7 +21,21 @@ Agrega, busca, lista y elimina contactos sintéticos. Cada contacto tiene ID est
 6. **Persistencia:** crea dos contactos, cierra y vuelve a abrir; identifica los dos. Alimenta JSON truncado: debe rechazar sin perder la copia corrupta.
 
 ## Entrega y avance
-Código, instrucciones, al menos seis pruebas automatizadas con `unittest` y un ejemplo de ejecución. Explica flujo, tipos y cómo manejar un error. Demuestra ambas aplicaciones desde una carpeta nueva; aplica la rúbrica del README.
+Código, instrucciones, al menos seis pruebas automatizadas con `unittest`, un ejemplo de ejecución y la **ficha Feynman completa (4 pasos)** explicando tipos, flujo y guardado seguro. Demuestra ambas aplicaciones desde una carpeta nueva; aplica la rúbrica del README.
+
+## Método Richard Feynman (4 pasos obligatorios)
+
+1. **Seleccionar y estudiar el concepto:** tipos de dato (texto vs número decimal exacto `Decimal`), flujo condicional y reemplazo seguro de archivos JSON, apoyándote en el Tutorial oficial de Python.
+2. **Enseñarlo con palabras simples (sin jerga):**
+   - Para la computadora, `"2"` escrito entre comillas es un dibujo de un carácter (como una etiqueta pegada en una caja), mientras que `2` es una cantidad con la que puedes sumar y multiplicar. Si sumas dos etiquetas `"2" + "2"`, juntas los dibujos (`"22"`), no las cantidades (`4`).
+   - Guardar en un archivo nuevo antes de borrar el viejo evita quedarte sin libreta si se va la luz a mitad de una frase: primero escribes la hoja limpia aparte y, solo cuando terminas, la cambias por la anterior.
+3. **Identificar lagunas y volver a la fuente original:**
+   - *Laguna típica:* «¿Por qué `0.1 + 0.2` da `0.30000000000000004` en Python si en papel da `0.3`?» y «¿Por qué cambiar un archivo en la misma carpeta es distinto a copiarlo desde otro disco?»
+   - *Regreso a la fuente:* consulta en el [Tutorial oficial de Python (Floating Point Arithmetic / `decimal`)](https://docs.python.org/3/tutorial/floatingpoint.html) cómo la base binaria aproxima decimales y por qué `Decimal` conserva centavos exactos, y revisa `os.replace` frente a descarga a disco (`os.fsync`).
+4. **Simplificar y revisar con analogías:**
+   - *Analogía del dinero y la moneda:* usar flotantes binarios para dinero es como medir pesos exactos con una regla graduada en tercios: siempre sobra o falta un milímetro; `Decimal` es contar monedas enteras una por una.
+   - *Analogía de la pizarra:* reemplazar de golpe sobre el archivo original es borrar la pizarra mientras alguien aún copia la tarea; escribir en una hoja temporal y colgarla encima solo cuando está completa garantiza que nunca quede media lista rota (aunque sin garantizar que el edificio no se quede sin luz antes de guardar en disco).
+   - *Comprobación del estudiante:* reescribe estos cuatro pasos en tus propias palabras en el README de tu proyecto sin copiar definiciones técnicas.
 
 ## Recursos
 - [Tutorial oficial de Python](https://docs.python.org/3/tutorial/) — consulta tipos, control de flujo y funciones; presupone nociones previas.

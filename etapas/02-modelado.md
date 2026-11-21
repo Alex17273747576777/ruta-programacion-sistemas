@@ -18,7 +18,20 @@ Modela `Libro`, `Usuario` y `Prestamo`; un ejemplar tiene ID único y puede esta
 6. Sustituye repositorio por doble en memoria; prueba reglas sin disco. Explica qué NO prueba el doble (integración con archivo/base).
 
 ## Entrega y avance
-Al menos ocho tests unitarios, dos de integración de persistencia, y un dibujo de dependencias. Ejecuta suite desde limpio y conserva su salida. Demuestra invariantes anteriores y explica una limitación del diseño. Aplica rúbrica común.
+Al menos ocho tests unitarios, dos de integración de persistencia, un dibujo de dependencias y la **ficha Feynman completa (4 pasos)** sobre separación de reglas, identidad por ID y límites de los dobles de prueba. Ejecuta suite desde limpio y conserva su salida. Demuestra invariantes anteriores y explica una limitación del diseño. Aplica rúbrica común.
+
+## Método Richard Feynman (4 pasos obligatorios)
+
+1. **Seleccionar y estudiar el concepto:** separación entre reglas del problema y entrada/salida, identidad por clave única frente a nombre repetido, y dobles de prueba en memoria, consultando las secciones de clases y `unittest` en Python.
+2. **Enseñarlo con palabras simples (sin jerga):**
+   - Las reglas de la biblioteca son como las normas de un juego de mesa: dicen «no puedes prestar la misma ficha a dos personas a la vez». Que el juego se juegue en papel, en consola o en una pantalla no cambia las reglas; si mezclas las normas dentro de los botones de la pantalla, cada vez que cambies de pantalla rompes el juego.
+   - Dos personas pueden llamarse igual («Ana Pérez»), así que usar el nombre para saber quién es quién confunde préstamos. Por eso cada socio y cada libro llevan un número de carné único que nunca cambia.
+3. **Identificar lagunas y volver a la fuente original:**
+   - *Laguna típica:* «Si mis pruebas en memoria pasan todas, ¿por qué puede fallar al guardar en archivo o base real?» y «¿Por qué un objeto puede cambiar de datos por dentro sin pasar por las reglas si dejo sus campos abiertos?»
+   - *Regreso a la fuente:* vuelve a [Python `unittest` (`unittest.mock` / aislamiento)](https://docs.python.org/3/library/unittest.html) y [Python: clases](https://docs.python.org/3/tutorial/classes.html) para distinguir qué valida una prueba en memoria (lógica pura) de lo que solo prueba una ejecución real contra disco (permisos, formato JSON, bloqueos), y cómo controlar mutaciones mediante operaciones explícitas.
+4. **Simplificar y revisar con analogías:**
+   - *Analogía del árbitro y la libreta:* el dominio es el árbitro que decide si el préstamo es legal; el disco es la libreta donde se apunta el marcador. Un ensayo en memoria sustituye la libreta por notas rápidas para probar rápido si el árbitro pita bien las faltas, pero **no demuestra** que la libreta tenga hojas suficientes ni que el bolígrafo escriba bajo la lluvia.
+   - *Comprobación del estudiante:* explica en cinco líneas simples, sin usar la palabra «encapsulación» ni «inyección de dependencias», por qué tu reloj de prueba se pasa como parámetro y qué deja sin probar el doble en memoria.
 
 ## Recursos
 - [Python: clases](https://docs.python.org/3/tutorial/classes.html) — objetos, alcance y métodos.
