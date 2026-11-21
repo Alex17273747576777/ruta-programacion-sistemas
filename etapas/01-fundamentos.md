@@ -37,6 +37,9 @@ Código, instrucciones, al menos seis pruebas automatizadas con `unittest`, un e
    - *Analogía de la pizarra:* reemplazar de golpe sobre el archivo original es borrar la pizarra mientras alguien aún copia la tarea; escribir en una hoja temporal y colgarla encima solo cuando está completa garantiza que nunca quede media lista rota (aunque sin garantizar que el edificio no se quede sin luz antes de guardar en disco).
    - *Comprobación del estudiante:* reescribe estos cuatro pasos en tus propias palabras en el README de tu proyecto sin copiar definiciones técnicas.
 
-## Recursos
+## Recursos y práctica activa (fuentes oficiales + FMHY.net)
+- Implementación y pruebas de referencia: [`proyectos/01_fundamentos/`](../proyectos/01_fundamentos/) (`python3 -m unittest proyectos/01_fundamentos/test_etapa01.py -v`).
+- Hojas de apoyo: [CheatSheet Python y Decimal](../cheatsheets/python-y-decimal.md) · [Guía 01 · Binario y CPU](../guias/01-binario-arquitectura-y-cpu.md).
 - [Tutorial oficial de Python](https://docs.python.org/3/tutorial/) — consulta tipos, control de flujo y funciones; presupone nociones previas.
 - [Pro Git](https://git-scm.com/book/en/v2) — capítulos 1–2, historial y commits. No subas secretos.
+- **Recursos activos de [FMHY.net](https://fmhy.net/educational):** [FutureCoder](https://futurecoder.io/) (práctica interactiva), [A Byte of Python](https://python.swaroopch.com/), [CS50 Python](https://cs50.harvard.edu/python/), [Hitchhiker's Guide to Python](https://docs.python-guide.org/), [NandGame](https://nandgame.com/) y [Missing Semester (MIT)](https://missing.csail.mit.edu/).

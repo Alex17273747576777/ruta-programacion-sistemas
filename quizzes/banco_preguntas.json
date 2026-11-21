@@ -1,0 +1,158 @@
+[
+  {
+    "id": "etapa1-decimal",
+    "etapa": "01-fundamentos",
+    "pregunta": "¿Por qué en Python `0.1 + 0.2` produce `0.30000000000000004` y qué debes usar para dinero?",
+    "opciones": [
+      "Es un error de Python; usar round(x, 2) siempre basta",
+      "Los flotantes IEEE-754 trabajan en base binaria; para dinero se usa Decimal o enteros en centavos",
+      "eval('0.1 + 0.2') resuelve el redondeo automáticamente",
+      "Python convierte 0.1 en cadena antes de sumarlo"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Un flotante binario solo representa mitades exactas (1/2, 1/4, 1/8...), igual que 1/3 en base decimal es infinito. Para dinero se usa Decimal o centavos enteros."
+  },
+  {
+    "id": "etapa1-atomico",
+    "etapa": "01-fundamentos",
+    "pregunta": "¿Qué ventaja real ofrece guardar un JSON primero en un archivo temporal del mismo directorio y usar `os.replace`?",
+    "opciones": [
+      "Garantiza que el disco físico nunca se apague sin energía",
+      "Evita dejar el archivo original truncado a medias si el proceso cae durante la escritura",
+      "Comprime automáticamente el archivo a la mitad de tamaño",
+      "Permite usar eval() de forma segura al leer el JSON"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Es como escribir la nueva lista en una hoja aparte antes de colgarla sobre la vieja: si te interrumpen a mitad de frase, la lista anterior sigue intacta."
+  },
+  {
+    "id": "etapa2-dobles",
+    "etapa": "02-modelado",
+    "pregunta": "¿Qué NO demuestra una suite de pruebas unitarias que usa un repositorio en memoria?",
+    "opciones": [
+      "Que la regla impide prestar dos veces el mismo ejemplar",
+      "Que el reloj inyectado calcula bien los días de atraso",
+      "Permisos reales de archivo, bloqueos concurrentes ni errores de serialización en disco/BD",
+      "Que dos objetos distintos con igual título se distinguen por ID"
+    ],
+    "correcta": 2,
+    "explicacion_feynman": "Probar al árbitro en memoria confirma que conoce las reglas del juego, pero no demuestra que la libreta física tenga papel ni que el bolígrafo funcione."
+  },
+  {
+    "id": "etapa3-concurrencia",
+    "etapa": "03-datos",
+    "pregunta": "Hay stock=3 y llegan dos salidas concurrentes de 2 unidades. ¿Qué garantiza que el stock nunca quede negativo?",
+    "opciones": [
+      "Hacer SELECT cantidad en Python y luego UPDATE productos SET cantidad = cantidad - 2",
+      "Un sleep aleatorio antes de cada consulta",
+      "Ejecutar dentro de transacción UPDATE ... SET cantidad = cantidad - 2 WHERE id = ? AND cantidad >= 2",
+      "Desactivar las claves foráneas en SQLite"
+    ],
+    "correcta": 2,
+    "explicacion_feynman": "Si dos taquilleros miran la caja y luego restan, prometen más entradas de las que hay. Con la condición dentro del UPDATE, el motor evalúa y descuenta en un turno único."
+  },
+  {
+    "id": "etapa3-idempotencia",
+    "etapa": "03-datos",
+    "pregunta": "Un cliente reintenta un descuento de inventario con la misma `clave_operacion` pero distinto `delta`. ¿Qué debe hacer el servidor?",
+    "opciones": [
+      "Aplicar el nuevo delta encima del anterior",
+      "Devolver éxito silencioso sin avisar",
+      "Rechazar el conflicto (p. ej. 409 Conflict) comparando el hash del payload",
+      "Borrar la clave anterior y reiniciar la secuencia"
+    ],
+    "correcta": 2,
+    "explicacion_feynman": "El número de serie del recibo solo puede devolver el mismo recibo original; si alguien presenta el mismo número con otra cantidad distinta, es un conflicto que debe rechazarse."
+  },
+  {
+    "id": "etapa4-autorizacion",
+    "etapa": "04-redes",
+    "pregunta": "Un usuario autenticado con token válido pide `GET /products/9` que pertenece a otro usuario. ¿Qué fallo cometes si solo verificas que inició sesión?",
+    "opciones": [
+      "Inyección de dependencias",
+      "Broken Object Level Authorization (autorización rota por objeto)",
+      "Fallo de liveness probe",
+      "Overflow de complemento a dos"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Mostrar el carné en la puerta del hotel demuestra quién eres (autenticación), pero no te autoriza a abrir la habitación 9 de otro huésped."
+  },
+  {
+    "id": "etapa5-readiness",
+    "etapa": "05-operacion",
+    "pregunta": "La base de datos cae temporalmente pero el proceso web sigue vivo. ¿Qué debe responder `/health/ready` frente a `/health/live`?",
+    "opciones": [
+      "Ambos en 200 OK para evitar alertas",
+      "Liveness falla para reiniciar el contenedor en bucle cada segundo",
+      "Liveness sigue sano (el proceso no está colgado) y readiness falla para retirar tráfico sin reiniciar en bucle",
+      "Ninguno debe existir en producción"
+    ],
+    "correcta": 2,
+    "explicacion_feynman": "Si se va la luz en el banco, despedir y volver a contratar al cajero cada 10 segundos no arregla la caja; solo cierras la ventanilla al público (readiness) hasta que vuelva la luz."
+  },
+  {
+    "id": "etapa6-outbox",
+    "etapa": "06-sistemas",
+    "pregunta": "¿Por qué el patrón Transactional Outbox + consumidor idempotente resuelve el corte entre guardar en BD y publicar en cola?",
+    "opciones": [
+      "Porque hace que la cola mágicamente entregue exactly-once sin reintentos",
+      "Porque guarda el dato y el evento pendiente en la misma transacción local, y el consumidor tolera entregas repetidas",
+      "Porque elimina la necesidad de base de datos",
+      "Porque desactiva la caché TTL automáticamente"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Anotas la venta y dejas la carta en la bandeja de salida del mismo libro contable; aunque el mensajero entregue el sobre dos veces luego, quien recibe tacha el código único para no repetir el efecto."
+  },
+  {
+    "id": "guia-binario",
+    "etapa": "guia-01-binario",
+    "pregunta": "En complemento a dos de 8 bits, ¿qué rango entero con signo se puede representar?",
+    "opciones": [
+      "0 a 255",
+      "-127 a 127",
+      "-128 a 127",
+      "-256 a 255"
+    ],
+    "correcta": 2,
+    "explicacion_feynman": "El bit más significativo tiene peso negativo (-128), por eso con 8 bits los negativos llegan hasta -128 y los positivos hasta +127 (incluyendo el 0)."
+  },
+  {
+    "id": "guia-lenguajes",
+    "etapa": "guia-02-sistemas",
+    "pregunta": "¿Qué distingue principalmente a Rust frente a C y a Python/Go en gestión de memoria?",
+    "opciones": [
+      "Usa un recolector de basura más grande que Python",
+      "Verifica propiedad y préstamos en tiempo de compilación sin recolector de basura en ejecución",
+      "No permite punteros ni referencias bajo ninguna forma",
+      "Solo funciona interpretado línea por línea"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Rust actúa como un arquitecto que revisa los planos antes de abrir la obra: prohíbe al compilar que dos escriban a la vez en la misma hoja o usen una mesa ya recogida."
+  },
+  {
+    "id": "guia-linux-contenedores",
+    "etapa": "guia-03-linux",
+    "pregunta": "¿Qué diferencia esencial separa a un contenedor (Docker/Podman) de una máquina virtual completa?",
+    "opciones": [
+      "El contenedor comparte el kernel del host usando namespaces y cgroups; la VM virtualiza un kernel completo",
+      "El contenedor siempre ejecuta un kernel de Windows propio",
+      "Una VM no puede usar red",
+      "Los contenedores no aíslan archivos ni procesos"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Una VM es otra casa con cimientos propios; un contenedor es un apartamento con llave y muebles propios que comparte la caldera central (el kernel) del edificio."
+  },
+  {
+    "id": "guia-embebidos",
+    "etapa": "guia-04-embebidos",
+    "pregunta": "¿Por qué conviene evitar `delay(5000)` dentro del bucle principal de un microcontrolador cuando lees botones o sensores?",
+    "opciones": [
+      "Porque borra la memoria flash del chip",
+      "Porque bloquea la CPU durante esos 5 segundos e impide atender entradas mientras espera",
+      "Porque cambia el voltaje de 3.3 V a 5 V",
+      "Porque convierte I2C en SPI"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Usar delay() es taparse los oídos mirando la olla cinco minutos; usar millis() o un RTOS permite mirar el reloj sin dejar de escuchar el timbre ni los sensores."
+  }
+]

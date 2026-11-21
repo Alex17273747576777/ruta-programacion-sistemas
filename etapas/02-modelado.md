@@ -33,7 +33,10 @@ Al menos ocho tests unitarios, dos de integración de persistencia, un dibujo de
    - *Analogía del árbitro y la libreta:* el dominio es el árbitro que decide si el préstamo es legal; el disco es la libreta donde se apunta el marcador. Un ensayo en memoria sustituye la libreta por notas rápidas para probar rápido si el árbitro pita bien las faltas, pero **no demuestra** que la libreta tenga hojas suficientes ni que el bolígrafo escriba bajo la lluvia.
    - *Comprobación del estudiante:* explica en cinco líneas simples, sin usar la palabra «encapsulación» ni «inyección de dependencias», por qué tu reloj de prueba se pasa como parámetro y qué deja sin probar el doble en memoria.
 
-## Recursos
+## Recursos y práctica activa (fuentes oficiales + FMHY.net)
+- Implementación y pruebas de referencia: [`proyectos/02_modelado/`](../proyectos/02_modelado/) (`python3 -m unittest proyectos/02_modelado/test_etapa02.py -v`).
+- Guía complementaria: [Guía 02 · Lenguajes de sistemas comparados](../guias/02-lenguajes-de-sistemas.md) y [CheatSheet C/C++/Rust/Go/Zig](../cheatsheets/c-cpp-rust-go-zig.md).
 - [Python: clases](https://docs.python.org/3/tutorial/classes.html) — objetos, alcance y métodos.
 - [Python unittest](https://docs.python.org/3/library/unittest.html) — aislamiento y aserciones.
 - [Pro Git: ramas](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) — cambios revisables.
+- **Recursos activos de [FMHY.net](https://fmhy.net/educational):** [Design Patterns for Humans](https://github.com/kamranahmedse/design-patterns-for-humans), [Awesome Low Level Design](https://github.com/ashishps1/awesome-low-level-design), [Crafting Interpreters](https://www.craftinginterpreters.com/), [Big-O Cheatsheet](https://www.bigocheatsheet.com/) y [Learn Git Branching](https://learngitbranching.js.org/).

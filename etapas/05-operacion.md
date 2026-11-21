@@ -33,6 +33,9 @@ CI y scripts, documentación operativa, salida real de restauración, prueba de 
    - *Analogía de la tienda y la caja registradora:* *liveness* comprueba que el empleado esté despierto dentro de la tienda; *readiness* comprueba que la caja registradora tenga corriente para cobrar. Si se va la luz en el banco, despedir y volver a contratar al empleado cada 10 segundos (*reinicio por liveness*) no arregla la caja; solo hay que cerrar temporalmente la puerta al público (*readiness en rojo*) hasta que vuelva la conexión. (*Límite:* las pruebas de restauración en una base temporal pequeña no miden el tiempo de restauración con gigabytes reales de producción).
    - *Comprobación del estudiante:* explica a una persona no técnica qué pasó paso a paso en tu simulacro de restauración y por qué tu *readiness* no se marca sano sin base de datos.
 
-## Recursos
+## Recursos y práctica activa (fuentes oficiales + FMHY.net)
+- Implementación y pruebas operativas: [`proyectos/05_operacion/`](../proyectos/05_operacion/) (`python3 -m unittest proyectos/05_operacion/test_etapa05_operacion.py -v`).
+- Guías y hojas: [Guía 03 · Linux, Shell, Git y Contenedores](../guias/03-linux-shell-git-y-contenedores.md) · [CheatSheet Git, Linux y Docker](../cheatsheets/git-linux-y-docker.md).
 - [OpenTelemetry: señales](https://opentelemetry.io/docs/concepts/signals/) — trazas, métricas y logs.
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/) — amenazas y revisión.
+- **Recursos activos de [FMHY.net](https://fmhy.net/linux-macos):** [ArchWiki](https://wiki.archlinux.org/), [Linux Journey](https://labex.io/linuxjourney), [Linux Command Library](https://linuxcommandlibrary.com/), [systemd-by-example](https://systemd-by-example.com/), [Podman](https://podman.io/), [Crontab Guru](https://crontab.guru/), [DevOps Exercises](https://github.com/bregman-arie/devops-exercises) y [90DaysOfDevOps](https://github.com/MichaelCade/90DaysOfDevOps).

@@ -18,16 +18,40 @@ En toda la ruta —desde explicar qué es una variable hasta defender un sistema
 3. **Identificar lagunas y volver a la fuente original:** cuando aparezca una explicación confusa o un «porque sí», marcar la laguna, volver a la documentación primaria y completar lo que faltaba.
 4. **Simplificar y revisar con analogías:** reescribir la explicación integrando lo corregido, apoyándose en analogías claras (declarando dónde deja de aplicarse la analogía) hasta lograr fluidez real.
 
-## Etapas
+## Etapas y proyectos ejecutables
 
-| # | Etapa | Producto | Avance verificable |
+| # | Etapa | Proyecto de referencia (ejecutable) | Avance verificable |
 |---|---|---|---|
-| 1 | [Fundamentos](etapas/01-fundamentos.md) | Calculadora y agenda CLI | Entradas normales y erróneas se tratan explícitamente; persiste y recupera datos. |
-| 2 | [Modelado y pruebas](etapas/02-modelado.md) | Biblioteca de préstamos | Invariantes y pruebas de operaciones, fallos y límites. |
-| 3 | [Datos y concurrencia](etapas/03-datos.md) | Inventario transaccional | Migraciones, rollback y pruebas de competencia contra base real. |
-| 4 | [Redes y aplicaciones](etapas/04-redes.md) | API de inventario | Contrato HTTP, autenticación/autorización y pruebas de integración. |
-| 5 | [Entrega y operación](etapas/05-operacion.md) | Servicio observable | CI, empaquetado, restauración ensayada y respuesta a incidentes. |
-| 6 | [Sistemas distribuidos](etapas/06-sistemas.md) | API + cola + caché + worker | Idempotencia, fallos inyectados, métricas y defensa de decisiones. |
+| 1 | [Fundamentos](etapas/01-fundamentos.md) | [`proyectos/01_fundamentos/`](proyectos/01_fundamentos/) (`calculadora.py`, `agenda.py`) | Entradas normales y erróneas se tratan explícitamente; `Decimal` y guardado JSON atómico con pruebas. |
+| 2 | [Modelado y pruebas](etapas/02-modelado.md) | [`proyectos/02_modelado/`](proyectos/02_modelado/) (`biblioteca.py`) | Invariantes y pruebas de operaciones, fallos, reloj inyectado y límites. |
+| 3 | [Datos y concurrencia](etapas/03-datos.md) | [`proyectos/03_datos/`](proyectos/03_datos/) (`inventario.py`, `schema_postgres.sql`) | Migraciones, rollback, idempotencia y prueba real de competencia con barrera. |
+| 4 | [Redes y aplicaciones](etapas/04-redes.md) | [`proyectos/04_redes/`](proyectos/04_redes/) (`api_inventario.py`) | Servidor HTTP real, autorización por recurso, límites de entrada y pruebas de integración. |
+| 5 | [Entrega y operación](etapas/05-operacion.md) | [`proyectos/05_operacion/`](proyectos/05_operacion/) (`operacion.py`) | Liveness vs readiness, logs sin secretos, respaldo y restauración verificada con SHA-256. |
+| 6 | [Sistemas distribuidos](etapas/06-sistemas.md) | [`proyectos/06_sistemas/`](proyectos/06_sistemas/) (`pipeline_async.py`) | Outbox transaccional, consumidor idempotente, caché TTL, fallos inyectados y percentiles `p50`/`p95`. |
+
+## Guías técnicas, CheatSheets, Quizzes y Recursos activos FMHY.net
+
+Para cubrir en profundidad arquitectura de CPU, lenguajes de sistemas, Linux/contenedores y puente a electrónica/IoT/RTOS —incorporando los recursos activos verificados de **[FMHY.net](https://fmhy.net)** para superar un portal de artículos estáticos como `luisllamas.es`— este repositorio incluye:
+
+- **Guías técnicas completas (con 4 pasos Feynman y simuladores activos):**
+  - [Guía 01 · Binario, representación numérica y CPU](guias/01-binario-arquitectura-y-cpu.md)
+  - [Guía 02 · Lenguajes de sistemas comparados (Python, C, C++, Rust, Go, Zig)](guias/02-lenguajes-de-sistemas.md)
+  - [Guía 03 · Linux, Shell, Git y Contenedores](guias/03-linux-shell-git-y-contenedores.md)
+  - [Guía 04 · Puente a Electrónica, Microcontroladores, IoT y RTOS](guias/04-embebidos-iot-y-rtos.md)
+- **Hojas de referencia rápida orientadas a fallos reales (`cheatsheets/`):**
+  - [Python y Decimal](cheatsheets/python-y-decimal.md) · [SQL y transacciones](cheatsheets/sql-y-transacciones.md) · [Git, Linux y Docker](cheatsheets/git-linux-y-docker.md) · [C, C++, Rust, Go y Zig](cheatsheets/c-cpp-rust-go-zig.md) · [Redes, HTTP y seguridad](cheatsheets/redes-http-y-seguridad.md)
+- **Quiz CLI verificable:** ejecuta `python3 quizzes/quiz_cli.py` (o `python3 quizzes/quiz_cli.py --listar`) para evaluar tu comprensión con explicación Feynman paso a paso.
+- **Catálogo curado de recursos activos en FMHY.net:** [`recursos/fmhy-activos.md`](recursos/fmhy-activos.md) (verificado HTTP `200`/`3xx` el 2026-11-21).
+- **Comparativa de diseño y alcance:** [`docs/COMPARATIVA-LUISLLAMAS-Y-FMHY.md`](docs/COMPARATIVA-LUISLLAMAS-Y-FMHY.md).
+
+## Cómo ejecutar todas las pruebas locales
+
+```bash
+python3 tests/verificar_feynman.py
+python3 tests/verificar_enlaces_fmhy.py
+python3 -m unittest discover -s proyectos -v
+python3 -m unittest discover -s quizzes -v
+```
 
 ## Regla común de evaluación
 

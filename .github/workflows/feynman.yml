@@ -10,4 +10,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python3 tests/verificar_feynman.py
+      - name: Verificar Método Richard Feynman (4 pasos completos) y enlaces locales
+        run: python3 tests/verificar_feynman.py
+      - name: Verificar estructura de catálogo FMHY.net
+        run: python3 tests/verificar_enlaces_fmhy.py
+      - name: Ejecutar pruebas de los 6 proyectos de sistemas
+        run: python3 -m unittest discover -s proyectos -v
+      - name: Ejecutar pruebas del banco de quizzes
+        run: |
+          python3 -m unittest discover -s quizzes -v
+          python3 quizzes/quiz_cli.py --listar

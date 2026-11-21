@@ -35,7 +35,10 @@ Repositorio con diagramas legibles, código y configuración reproducibles, test
    - *Analogía del mostrador con buzón interno (outbox):* en vez de anotar la venta en el libro y luego cruzar la calle para echar la carta al buzón (donde puedes tropezar a mitad de la calle), guardas la venta **y** dejas la carta en la bandeja de salida dentro del mismo libro contable; un repartidor lee la bandeja después, y el destinatario tacha el código único del sobre al abrirlo. (*Límite:* las mediciones en una computadora local muestran fallos lógicos y comportamiento bajo reintentos, pero no predicen latencia ni costes en redes reales con múltiples máquinas).
    - *Comprobación del estudiante:* explica con palabras sencillas qué pasaría si quitaras la cola y la caché: cuándo te conviene esa versión simple y a partir de qué problema medido merece pagar la complejidad extra.
 
-## Recursos
+## Recursos y práctica activa (fuentes oficiales + FMHY.net)
+- Implementación y pruebas de outbox/caché/percentiles: [`proyectos/06_sistemas/`](../proyectos/06_sistemas/) (`python3 -m unittest proyectos/06_sistemas/test_etapa06_sistemas.py -v`).
+- Puente hardware/embebidos y referencia completa: [Guía 04 · Electrónica, IoT y RTOS](../guias/04-embebidos-iot-y-rtos.md) · [Catálogo FMHY.net](../recursos/fmhy-activos.md).
 - [PostgreSQL: transacciones](https://www.postgresql.org/docs/17/tutorial-transactions.html) — frontera de consistencia.
 - [OpenTelemetry: señales](https://opentelemetry.io/docs/concepts/signals/) — observabilidad.
 - [Pro Git](https://git-scm.com/book/en/v2) — colaboración y recuperación de historial.
+- **Recursos activos de [FMHY.net](https://fmhy.net/educational):** [System Design Primer](https://github.com/donnemartin/system-design-primer), [System Design 101](https://github.com/ByteByteGoHq/system-design-101), [Awesome System Design](https://github.com/ashishps1/awesome-system-design-resources), [Papers We Love](https://paperswelove.org/), [The Linux Kernel Docs](https://kernel.org/doc/) y [DevDocs](https://devdocs.io/).

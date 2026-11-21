@@ -33,6 +33,9 @@ Contrato OpenAPI o equivalente, servidor ejecutable, suite de integración con b
    - *Analogía de la llave del hotel y la plantilla impresa:* iniciar sesión te da la tarjeta del hotel (**autenticación**); probar en el servidor que la habitación `304` es la tuya antes de abrir la puerta es la **autorización por recurso**. Y una consulta SQL parametrizada es un cheque preimpreso donde el cliente solo rellena la casilla del nombre: nunca puede escribir instrucciones nuevas en la línea donde el banco dice «páguese». (*Límite:* el protocolo HTTP plano sin HTTPS viaja como postal abierta; el cifrado TLS en despliegue es aparte).
    - *Comprobación del estudiante:* explica en lenguaje cotidiano qué diferencia hay entre `401`, `403` y `404` en tu API y por qué nunca pegaste texto del usuario dentro del SQL.
 
-## Recursos
+## Recursos y práctica activa (fuentes oficiales + FMHY.net)
+- Implementación y pruebas HTTP reales: [`proyectos/04_redes/`](../proyectos/04_redes/) (`python3 -m unittest proyectos/04_redes/test_etapa04_api.py -v`).
+- Hoja rápida: [CheatSheet Redes, HTTP y seguridad](../cheatsheets/redes-http-y-seguridad.md).
 - [MDN: HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview) — estructura de intercambio.
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/) — identificación de riesgos; no reemplaza revisión de amenazas.
+- **Recursos activos de [FMHY.net](https://fmhy.net/developer-tools):** [Protocol Explorer](https://protocol-explorer-alpha.vercel.app/), [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/), [Web Browser Engineering](https://browser.engineering/), [The Copenhagen Book](https://thecopenhagenbook.com/), [Hoppscotch](https://hoppscotch.io/), [Bruno](https://www.usebruno.com/), [HTTPie](https://httpie.io/) y [FastAPI](https://fastapi.tiangolo.com/).

@@ -33,6 +33,9 @@ Script de migración, instrucciones para base temporal, tests de integración, r
    - *Analogía del billete numerado y la puerta giratoria:* una transacción es una puerta giratoria donde entran juntos el descuento y el recibo: o cruzan los dos, o ambos se quedan afuera. La clave única de operación es el número de serie del ticket: si el cliente vuelve con la misma foto del recibo porque se cortó la llamada, la taquilla reconoce el número y le muestra el mismo recibo en vez de cobrarle otra vez. (*Límite de la analogía:* niveles de aislamiento distintos en bases diferentes cambian qué filas se bloquean).
    - *Comprobación del estudiante:* explica por escrito a alguien sin formación técnica qué ocurrió en tu prueba concurrente con dos conexiones reales y qué habría pasado si hubieras separado la resta del registro del movimiento.
 
-## Recursos
+## Recursos y práctica activa (fuentes oficiales + FMHY.net)
+- Implementación y pruebas de concurrencia real: [`proyectos/03_datos/`](../proyectos/03_datos/) (`python3 -m unittest proyectos/03_datos/test_etapa03_concurrencia.py -v`) + [`schema_postgres.sql`](../proyectos/03_datos/schema_postgres.sql).
+- Hoja rápida: [CheatSheet SQL y transacciones](../cheatsheets/sql-y-transacciones.md).
 - [Tutorial PostgreSQL](https://www.postgresql.org/docs/17/tutorial.html) — consultas, integridad y transacciones; consulta la versión instalada.
 - [PostgreSQL: aislamiento](https://www.postgresql.org/docs/17/transaction-iso.html) — anomalías y comportamiento del motor.
+- **Recursos activos de [FMHY.net](https://fmhy.net/developer-tools):** [Select Star SQL](https://selectstarsql.com/), [SQLBolt](https://sqlbolt.com/), [SQL Noir](https://www.sqlnoir.com/), [DB Browser for SQLite](https://sqlitebrowser.org/), [DBeaver](https://dbeaver.io/), [DuckDB](https://duckdb.org/) y [ChartDB](https://chartdb.io/).
