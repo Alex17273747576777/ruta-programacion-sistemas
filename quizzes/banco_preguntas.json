@@ -336,5 +336,57 @@
     ],
     "correcta": 1,
     "explicacion_feynman": "Sin ese cinturón de seguridad, un script Bash sigue adelante aunque un paso anterior haya fallado y puede borrar o desplegar sobre una variable vacía."
+  },
+  {
+    "id": "lab-cpp-raii",
+    "etapa": "lab-cpp",
+    "pregunta": "En C++20, ¿por qué `std::unique_ptr` garantiza que no haya fuga del recurso incluso cuando una función lanza una excepción?",
+    "opciones": [
+      "Porque C++ tiene un recolector de basura en segundo plano",
+      "Porque al salir del ámbito por retorno o excepción se ejecutan deterministamente los destructores (RAII)",
+      "Porque desactiva las excepciones automáticamente",
+      "Porque duplica el puntero en disco"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "RAII ata la vida del recurso a la puerta de la habitación: aunque salgas corriendo por una emergencia (excepción), el resorte cierra la puerta y libera la llave automáticamente."
+  },
+  {
+    "id": "cheat-fetch-ok",
+    "etapa": "cheat-web",
+    "pregunta": "En JavaScript, llamas a `fetch('/api/algo')` y el servidor responde `HTTP 500`. ¿Qué ocurre con la Promesa de `fetch`?",
+    "opciones": [
+      "Siempre se rechaza (entra directo al catch)",
+      "Se resuelve normalmente con `resp.ok === false`, por lo que debes comprobar `if (!resp.ok)` explícitamente",
+      "Reintenta 10 veces sola",
+      "Convierte el código 500 en 200"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "El cartero cumplió trayendo la carta de vuelta; que dentro ponga 'error 500' es un problema de contenido que debes revisar leyendo `resp.ok`."
+  },
+  {
+    "id": "cheat-big-o-cola",
+    "etapa": "cheat-estructuras",
+    "pregunta": "¿Por qué extraer del inicio de un array normal (`list.pop(0)` en Python) cuesta `O(n)` frente a `collections.deque.popleft()` que cuesta `O(1)`?",
+    "opciones": [
+      "Porque `list` guarda los datos en PostgreSQL",
+      "Porque `list` es contigua en memoria y debe desplazar todos los elementos restantes una posición hacia la izquierda",
+      "Porque `deque` ordena alfabéticamente cada elemento",
+      "Porque `popleft()` borra todo el arreglo"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "En un array contiguo, si sale la primera persona de una fila de asientos numerados, todas las demás tienen que levantarse y correrse un asiento."
+  },
+  {
+    "id": "digital-nand-universal",
+    "etapa": "guia-01-binario",
+    "pregunta": "¿Por qué en diseño digital (como en NandGame o Nand2Tetris) la compuerta NAND se considera universal?",
+    "opciones": [
+      "Porque solo funciona con corriente alterna",
+      "Porque combinando únicamente compuertas NAND pueden construirse NOT, AND, OR, XOR, sumadores y memorias",
+      "Porque almacena 64 bits por transistor",
+      "Porque reemplaza a PostgreSQL"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "NAND es como el bloque básico de LEGO con el que puedes armar todas las demás piezas lógicas de una CPU, desde un inversor hasta un sumador completo."
   }
 ]
