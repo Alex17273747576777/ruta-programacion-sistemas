@@ -12,6 +12,8 @@ jobs:
           python-version: "3.12"
       - name: Verificar Método Richard Feynman (4 pasos completos) y enlaces locales
         run: python3 tests/verificar_feynman.py
+      - name: Verificar portal interactivo autocontenido
+        run: python3 tests/verificar_portal.py
       - name: Verificar estructura de catálogo FMHY.net
         run: python3 tests/verificar_enlaces_fmhy.py
       - name: Ejecutar pruebas de los 6 proyectos de sistemas

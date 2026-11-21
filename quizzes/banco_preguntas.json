@@ -154,5 +154,109 @@
     ],
     "correcta": 1,
     "explicacion_feynman": "Usar delay() es taparse los oídos mirando la olla cinco minutos; usar millis() o un RTOS permite mirar el reloj sin dejar de escuchar el timbre ni los sensores."
+  },
+  {
+    "id": "guia-poo-composicion",
+    "etapa": "guia-05-poo",
+    "pregunta": "¿Por qué en `ServicioBiblioteca` se prefiere recibir un `RepositorioBiblioteca` por parámetro (composición) en vez de heredar de `SQLiteStorage`?",
+    "opciones": [
+      "Porque Python no permite herencia de clases",
+      "Porque desacopla las reglas de negocio del motor de almacenamiento y permite probar con un doble en memoria",
+      "Porque hace que la base de datos sea 10 veces más rápida en disco",
+      "Porque evita escribir tests unitarios"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Usar un enchufe estándar en vez de soldar la lámpara directo a los cables de la pared te deja cambiar de bombilla o repositorio sin picar el muro."
+  },
+  {
+    "id": "guia-nginx-proxy",
+    "etapa": "guia-06-despliegue",
+    "pregunta": "Cuando colocas Nginx delante de tu servidor Python/Go, ¿qué ocurre si olvidas configurar `X-Forwarded-For` y `X-Forwarded-Proto`?",
+    "opciones": [
+      "Nginx borra la base de datos al reiniciar",
+      "Tu aplicación verá siempre la IP local de Nginx (`127.0.0.1`) y no sabrá si el usuario usó HTTPS",
+      "El servidor pasa a ejecutarse en el navegador del cliente",
+      "Las peticiones GET se convierten automáticamente en DELETE"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Si el recepcionista entrega el sobre sin anotar quién lo trajo de la calle ni si venía sellado con lacre (HTTPS), el cocinero de adentro cree que todos los pedidos nacieron en la puerta interna."
+  },
+  {
+    "id": "guia-docker-multicapa",
+    "etapa": "guia-06-despliegue",
+    "pregunta": "¿Para qué sirven los builds multicapa (multi-stage) y `.dockerignore` al empaquetar un servicio?",
+    "opciones": [
+      "Para incluir compiladores, .git y archivos .env en la imagen final",
+      "Para excluir secretos/basura del contexto de build y dejar solo el binario o dependencias mínimas de ejecución",
+      "Para ejecutar el contenedor como root con todos los permisos",
+      "Para desactivar el cifrado TLS en Nginx"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Es construir los muebles en el taller con todas las sierras (etapa builder) y llevar al apartamento solo el mueble terminado (etapa runtime), sin cargar con la caja de herramientas ni las llaves de tu casa (.env)."
+  },
+  {
+    "id": "cheat-regex-redos",
+    "etapa": "cheat-regex",
+    "pregunta": "¿Qué riesgo tiene usar cuantificadores anidados sin anclas como `(a+)+` sobre entradas de usuarios en un servidor?",
+    "opciones": [
+      "Convierte el texto en binario automáticamente",
+      "Puede provocar retroceso catastrófico (ReDoS) bloqueando la CPU con una cadena maliciosa corta",
+      "Rompe las claves foráneas de PostgreSQL",
+      "Cambia los permisos UNIX a 777"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Un colador con bucles dentro de bucles obliga al motor a probar miles de millones de caminos cuando una palabra larga casi encaja pero falla al final."
+  },
+  {
+    "id": "cheat-chmod-unix",
+    "etapa": "cheat-linux",
+    "pregunta": "¿Qué significa exactamente `chmod 750 deploy.sh` en Linux?",
+    "opciones": [
+      "Cualquier usuario de la red puede escribir y ejecutar el archivo",
+      "Dueño puede leer/escribir/ejecutar (7), grupo puede leer/ejecutar (5), otros no tienen acceso (0)",
+      "Solo lectura para todos los usuarios",
+      "Ejecución exclusiva como root durante 750 segundos"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Cada dígito suma lectura (4), escritura (2) y ejecución (1): 7=4+2+1 (todo), 5=4+1 (leer y ejecutar), 0=nada para terceros."
+  },
+  {
+    "id": "cheat-gpio-voltaje",
+    "etapa": "cheat-embebidos",
+    "pregunta": "Conectas la salida TX de un Arduino Uno (5 V) directo al pin RX de un ESP32 (3.3 V) sin divisor ni conversor de nivel. ¿Qué riesgo real asumes?",
+    "opciones": [
+      "Ninguno, todos los chips aceptan hasta 24 V",
+      "Sobretensión en el GPIO del ESP32 que puede dañar el pin o el microcontrolador",
+      "Que el protocolo pase de UART a Ethernet",
+      "Que el baudrate se duplique automáticamente"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Meter 5 V en una entrada diseñada para 3.3 V es conectar una manguera de bomberos a una tubería doméstica: puede reventar el sello interno del pin."
+  },
+  {
+    "id": "cheat-i2c-gnd",
+    "etapa": "cheat-embebidos",
+    "pregunta": "Conectas un sensor I2C (SDA y SCL) entre dos placas con fuentes de alimentación separadas y olvidas unir `GND` con `GND`. ¿Por qué falla la lectura?",
+    "opciones": [
+      "Porque I2C solo funciona por Bluetooth",
+      "Porque sin masa común (GND) no existe referencia compartida de voltaje para distinguir 0 y 1",
+      "Porque SDA debe conectarse al pin de 5 V directo",
+      "Porque FreeRTOS bloquea I2C por defecto"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Medir voltajes sin compartir GND es medir la altura de dos personas que están en pisos distintos sin saber a qué altura está el suelo del otro."
+  },
+  {
+    "id": "cheat-freertos-isr",
+    "etapa": "cheat-embebidos",
+    "pregunta": "Dentro de una rutina de interrupción (ISR) en FreeRTOS, ¿qué práctica es correcta?",
+    "opciones": [
+      "Llamar a delay(1000) y escribir logs largos por serie",
+      "Hacer el mínimo trabajo posible y notificar a una tarea mediante una API segura `*FromISR` (cola o semáforo)",
+      "Crear nuevas tareas dinámicamente dentro de cada interrupción",
+      "Deshabilitar el watchdog indefinidamente"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "La interrupción es tocar el timbre rápido para dejar un recado en el buzón (`FromISR`), no quedarse a charlar dentro de la puerta bloqueando todas las demás llamadas."
   }
 ]

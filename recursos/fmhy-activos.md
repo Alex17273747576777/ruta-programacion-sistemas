@@ -25,7 +25,12 @@ Todos los recursos de este catálogo proceden de las secciones activas de **[FMH
 | [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) | `educational` | Reglas oficiales de propiedad de recursos, seguridad de tipos y diseño en C++. |
 | [Tour of Go](https://go.dev/tour) | `educational` | Introducción interactiva oficial a Go, interfaces y concurrencia por goroutines. |
 | [High Assurance Rust](https://highassurance.rs/) | `educational` | Desarrollo de software seguro en Rust orientado a sistemas confiables. |
+| [The Rust Book](https://doc.rust-lang.org/book/) | Oficial / `educational` | Referencia completa del lenguaje Rust, ownership, traits y concurrencia. |
 | [Rust Learning](https://github.com/ctjhoa/rust-learning) | `educational` | Índice curado de libros, ejercicios y guías de propiedad/borrowing en Rust. |
+| [Go by Example](https://gobyexample.com/) | Oficial / `educational` | Ejemplos directos y ejecutables de concurrencia, canales y paquetes en Go. |
+| [Zig Documentation](https://ziglang.org/documentation/master/) | Oficial | Manual oficial de Zig, asignadores explícitos, `comptime` e interoperabilidad C. |
+| [Refactoring Guru](https://refactoring.guru/) | `educational` | Patrones de diseño, refactorización y olores de código explicados paso a paso. |
+| [Roadmap C++](https://roadmap.sh/cpp) / [Roadmap Rust](https://roadmap.sh/rust) | `educational` | Mapas visuales estructurados para progresar en lenguajes de sistemas. |
 | [Compiler Explorer (Godbolt)](https://godbolt.org/) | Sistemas / Compilación | Inspeccionar el ensamblador real generado por C, C++, Rust, Go o Zig. |
 | [Crafting Interpreters](https://www.craftinginterpreters.com/) | `educational` | Diseño modular, árboles de sintaxis, máquinas virtuales y pruebas unitarias reales. |
 | [Design Patterns for Humans](https://github.com/kamranahmedse/design-patterns-for-humans) | `educational` | Patrones de diseño explicados con analogías cotidianas (alineado con Feynman). |
@@ -40,6 +45,7 @@ Todos los recursos de este catálogo proceden de las secciones activas de **[FMH
 | [SQLBolt](https://sqlbolt.com/) | `educational` | Lecciones paso a paso de `SELECT`, `JOIN`, agregaciones y modificación de tablas. |
 | [SQL Noir](https://www.sqlnoir.com/) | `educational` | Ejercicios lúdicos para ganar soltura consultando relaciones y filtros SQL. |
 | [DB Browser for SQLite](https://sqlitebrowser.org/) | `developer-tools` | Inspeccionar tablas, índices, esquemas y `PRAGMA` en bases locales SQLite. |
+| [SQLite Documentation](https://www.sqlite.org/docs.html) | Oficial | Referencia primaria de transacciones WAL, `PRAGMA` y planes de consulta en SQLite. |
 | [DBeaver](https://dbeaver.io/) | `developer-tools` | Cliente universal para explorar PostgreSQL y planes `EXPLAIN` reales. |
 | [DuckDB](https://duckdb.org/) | `developer-tools` | Motor SQL embebido de alto rendimiento para análisis local reproducible. |
 | [ChartDB](https://chartdb.io/) | `developer-tools` | Visualización rápida de diagramas entidad-relación desde tu esquema SQL. |
@@ -71,6 +77,12 @@ Todos los recursos de este catálogo proceden de las secciones activas de **[FMH
 | [Oh My Git!](https://ohmygit.org/) | `educational` | Juego educativo para comprender el grafo real de commits y recuperaciones en Git. |
 | [Conventional Commits](https://www.conventionalcommits.org/) | `developer-tools` | Estándar claro para historial de commits legible y automatizable. |
 | [Podman](https://podman.io/) | `developer-tools` | Contenedores compatibles con OCI sin demonio raíz obligatorio. |
+| [Play with Docker](https://labs.play-with-docker.com/) | `developer-tools` | Laboratorio activo en navegador para practicar contenedores y redes Docker. |
+| [Nginx Docs](https://nginx.org/en/docs/) | Oficial | Documentación de proxy inverso, TLS, límites de carga y cabeceras HTTP. |
+| [ExplainShell](https://explainshell.com/) | `linux-macos` | Desglosa cada bandera y tubería de un comando shell consultando páginas `man`. |
+| [Regex101](https://regex101.com/) / [RegexLearn](https://regexlearn.com/) | `developer-tools` | Depurador interactivo y curso guiado de expresiones regulares sin adivinar. |
+| [CyberChef](https://gchq.github.io/CyberChef/) | `developer-tools` | Caja de herramientas offline/web para Base64, hashes, hex, JSON y cifrado. |
+| [Roadmap Docker](https://roadmap.sh/docker) / [Roadmap Linux](https://roadmap.sh/linux) | `educational` | Mapas estructurados de operación Linux y contenedores. |
 | [Crontab Guru](https://crontab.guru/) | `developer-tools` | Verificador legible de expresiones `cron` antes de programar tareas. |
 | [DevOps Exercises](https://github.com/bregman-arie/devops-exercises) | `educational` | Preguntas y escenarios prácticos de Linux, redes, contenedores y CI/CD. |
 | [90DaysOfDevOps](https://github.com/MichaelCade/90DaysOfDevOps) | `educational` | Ruta estructurada de Linux, automatización, contenedores y observabilidad. |
@@ -88,6 +100,9 @@ Todos los recursos de este catálogo proceden de las secciones activas de **[FMH
 | [Awesome Raspberry Pi](https://github.com/thibmaek/awesome-raspberry-pi) | `linux-macos` | Herramientas y proyectos verificados para Linux embebido en Raspberry Pi. |
 | [Last Minute Engineers](https://lastminuteengineers.com/) | `educational` | Guías prácticas de sensores, ESP32, Arduino, protocolos I2C/SPI/UART y pines. |
 | [How To Mechatronics](https://howtomechatronics.com/) | `educational` | Fundamentos y montajes completos de electrónica, control y mecatrónica. |
+| [FreeRTOS Docs](https://www.freertos.org/Documentation/00-Overview) | Oficial | Documentación oficial de tareas, colas, semáforos y temporizadores RTOS. |
+| [Zephyr Project Docs](https://docs.zephyrproject.org/latest/) | Oficial | Documentación oficial de Zephyr RTOS para microcontroladores modernos. |
+| [ESP-IDF Docs](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/) | Oficial | Framework oficial de Espressif para ESP32, GPIO, Wi-Fi, MQTT y FreeRTOS. |
 
 ## 7. Sistemas Distribuidos, Referencia General y Hojas Rápidas (Etapa 6)
 

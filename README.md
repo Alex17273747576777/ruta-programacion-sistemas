@@ -38,8 +38,11 @@ Para cubrir en profundidad arquitectura de CPU, lenguajes de sistemas, Linux/con
   - [Guía 02 · Lenguajes de sistemas comparados (Python, C, C++, Rust, Go, Zig)](guias/02-lenguajes-de-sistemas.md)
   - [Guía 03 · Linux, Shell, Git y Contenedores](guias/03-linux-shell-git-y-contenedores.md)
   - [Guía 04 · Puente a Electrónica, Microcontroladores, IoT y RTOS](guias/04-embebidos-iot-y-rtos.md)
+  - [Guía 05 · POO, Composición, Patrones y Arquitectura Limpia](guias/05-poo-patrones-y-arquitectura.md)
+  - [Guía 06 · Redes, Nginx, Contenedores Docker/Podman y Despliegue](guias/06-redes-nginx-docker-y-despliegue.md)
 - **Hojas de referencia rápida orientadas a fallos reales (`cheatsheets/`):**
-  - [Python y Decimal](cheatsheets/python-y-decimal.md) · [SQL y transacciones](cheatsheets/sql-y-transacciones.md) · [Git, Linux y Docker](cheatsheets/git-linux-y-docker.md) · [C, C++, Rust, Go y Zig](cheatsheets/c-cpp-rust-go-zig.md) · [Redes, HTTP y seguridad](cheatsheets/redes-http-y-seguridad.md)
+  - [Python y Decimal](cheatsheets/python-y-decimal.md) · [SQL y transacciones](cheatsheets/sql-y-transacciones.md) · [Git, Linux y Docker](cheatsheets/git-linux-y-docker.md) · [C, C++, Rust, Go y Zig](cheatsheets/c-cpp-rust-go-zig.md) · [Redes, HTTP y seguridad](cheatsheets/redes-http-y-seguridad.md) · [Regex, Binario y Nginx](cheatsheets/regex-binario-y-nginx.md) · [Embebidos, Arduino, ESP32 y RTOS](cheatsheets/embebidos-arduino-esp32-y-rtos.md)
+- **Portal Web Interactivo y Playgrounds offline (`docs/index.html`):** abre [`docs/index.html`](docs/index.html) en cualquier navegador para usar el roadmap interactivo, conversor Binario/IEEE-754 en vivo, probador Regex + `chmod`, buscador FMHY y el quiz Feynman interactivo (20 preguntas).
 - **Quiz CLI verificable:** ejecuta `python3 quizzes/quiz_cli.py` (o `python3 quizzes/quiz_cli.py --listar`) para evaluar tu comprensión con explicación Feynman paso a paso.
 - **Catálogo curado de recursos activos en FMHY.net:** [`recursos/fmhy-activos.md`](recursos/fmhy-activos.md) (verificado HTTP `200`/`3xx` el 2026-11-21).
 - **Comparativa de diseño y alcance:** [`docs/COMPARATIVA-LUISLLAMAS-Y-FMHY.md`](docs/COMPARATIVA-LUISLLAMAS-Y-FMHY.md).
