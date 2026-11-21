@@ -121,3 +121,14 @@ Todos los recursos de este catálogo proceden de las secciones activas de **[FMH
 | [Roadmap.sh](https://roadmap.sh/) | `educational` | Mapas de ruta por perfil para comprobar dependencias entre temas. |
 | [freeCodeCamp](https://www.freecodecamp.org/) | `educational` | Práctica estructurada gratuita desde fundamentos hasta backend y algoritmos. |
 | [TeachYourselfCS](https://teachyourselfcs.com/) / [OSSU](https://github.com/ossu/computer-science) | `educational` | Currículo completo de ciencias de la computación con fuentes universitarias primarias. |
+
+## 8. Web, TypeScript, Control Automático e IA Aplicada (Guías 07 y 08)
+
+| Recurso | Origen FMHY | Para qué sirve en esta ruta |
+|---|---|---|
+| [MDN](https://developer.mozilla.org/) / [Web.dev Learn](https://web.dev/learn) | `educational` | Documentación primaria de HTML, CSS, DOM, CORS, seguridad web y rendimiento. |
+| [The Odin Project](https://www.theodinproject.com/) / [FullStackOpen](https://fullstackopen.com/en/) | `educational` | Rutas basadas en proyectos completos de desarrollo web y APIs reales. |
+| [JavaScript.info](https://javascript.info/) / [Eloquent JavaScript](https://eloquentjavascript.net/) | `educational` | Profundidad en Event Loop, promesas, microtareas y cierres en JavaScript. |
+| [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html) / [Patterns.dev](https://www.patterns.dev/) | Oficial / `educational` | Contratos estáticos de tipo en compilación y patrones web modernos. |
+| [PhET Interactive Simulations](https://phet.colorado.edu/) / [Academo](https://academo.org/) | `educational` | Simulaciones visuales de ondas, circuitos, señales y muestreo en tiempo real. |
+| [3Blue1Brown](https://www.3blue1brown.com/) / [Fast.ai](https://course.fast.ai/) | `educational` | Álgebra lineal intuitiva, cálculo y aprendizaje automático reproducible sin cajas negras. |

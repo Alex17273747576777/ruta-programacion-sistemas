@@ -258,5 +258,83 @@
     ],
     "correcta": 1,
     "explicacion_feynman": "La interrupción es tocar el timbre rápido para dejar un recado en el buzón (`FromISR`), no quedarse a charlar dentro de la puerta bloqueando todas las demás llamadas."
+  },
+  {
+    "id": "guia-web-eventloop",
+    "etapa": "guia-07-web",
+    "pregunta": "En JavaScript de navegador/Node, ¿qué se ejecuta antes tras terminar el código sincrónico actual?",
+    "opciones": [
+      "Un `setTimeout(fn, 0)` (macrotarea)",
+      "Una cola de `Promise.then(...)` (microtarea)",
+      "Siempre se ejecutan en orden alfabético",
+      "JavaScript bloquea la pestaña hasta que el usuario haga clic"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Las promesas pendientes son notas urgentes pegadas en el timbre (microtareas): el camarero las vacía todas antes de coger el siguiente recado normal (`setTimeout`)."
+  },
+  {
+    "id": "guia-web-typescript-cors",
+    "etapa": "guia-07-web",
+    "pregunta": "¿Por qué validar solo con interfaces de TypeScript y confiar en CORS NO protege una API contra un atacante con `curl`?",
+    "opciones": [
+      "Porque TypeScript solo funciona en Linux",
+      "Porque los tipos de TypeScript desaparecen al compilar y CORS solo lo aplica el navegador, nunca `curl`",
+      "Porque `curl` no soporta peticiones POST",
+      "Porque CORS cifra la base de datos"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "TypeScript es el corrector ortográfico antes de imprimir el menú y CORS es la regla del portero para otros vecinos del navegador; un cliente externo por terminal salta ambos y llama directo a tu cocina."
+  },
+  {
+    "id": "guia-control-pid",
+    "etapa": "guia-08-control",
+    "pregunta": "En un controlador PID con salida acotada (0–100%), ¿qué problema evita el mecanismo *anti-windup*?",
+    "opciones": [
+      "Que el sensor mida en grados Celsius en vez de Kelvin",
+      "Que el término integral acumule un error gigante mientras el actuador ya está saturado al 100%, causando sobreimpulso enorme después",
+      "Que el término proporcional dependa del setpoint",
+      "Que la derivada suavice la respuesta"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Si pisas el acelerador a fondo cuesta arriba y sigues anotando en una libreta que 'te falta velocidad' durante diez minutos, al llegar a la cima seguirás acelerando al máximo mucho tiempo antes de soltar."
+  },
+  {
+    "id": "guia-ia-leakage",
+    "etapa": "guia-08-control",
+    "pregunta": "¿Qué es la fuga de datos (*data leakage*) al entrenar y evaluar un modelo de IA?",
+    "opciones": [
+      "Guardar pesos del modelo en formato binario",
+      "Normalizar o filtrar con estadísticas de todo el conjunto antes de separar la partición de prueba, inflando falsamente la métrica",
+      "Usar Python en lugar de C++",
+      "Medir la latencia p95 en producción"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Es dejar que el estudiante mire parte de las respuestas del examen final mientras practica: saca 10 en el simulacro, pero falla frente a datos nuevos."
+  },
+  {
+    "id": "lab-c-overflow",
+    "etapa": "lab-c",
+    "pregunta": "En C, ¿por qué debes comprobar `a > INT_MAX - b` antes de ejecutar `a + b` en enteros con signo?",
+    "opciones": [
+      "Porque `a + b` devuelve automáticamente un `Decimal` en C",
+      "Porque el desbordamiento de enteros con signo en C es comportamiento indefinido (*Undefined Behavior*), no una suma modular garantizada",
+      "Porque `INT_MAX` vale 255 siempre",
+      "Porque el compilador convierte `int` en cadena de texto"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "A diferencia del odómetro predecible de los enteros sin signo, desbordar un entero con signo en C rompe las reglas del contrato con el compilador y este puede optimizar o romper tu programa."
+  },
+  {
+    "id": "lab-bash-estricto",
+    "etapa": "lab-bash",
+    "pregunta": "¿Qué consigue `set -euo pipefail` al inicio de un script Bash operativo?",
+    "opciones": [
+      "Ignora todos los errores y borra variables no usadas",
+      "Detiene el script si falla un comando (`-e`), si se lee una variable indefinida (`-u`) o si falla cualquier etapa intermedia de una tubería (`pipefail`)",
+      "Convierte el script en binario ELF compilado",
+      "Abre un puerto HTTP en el 8080"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Sin ese cinturón de seguridad, un script Bash sigue adelante aunque un paso anterior haya fallado y puede borrar o desplegar sobre una variable vacía."
   }
 ]

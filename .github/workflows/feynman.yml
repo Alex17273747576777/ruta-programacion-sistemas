@@ -18,6 +18,8 @@ jobs:
         run: python3 tests/verificar_enlaces_fmhy.py
       - name: Ejecutar pruebas de los 6 proyectos de sistemas
         run: python3 -m unittest discover -s proyectos -v
+      - name: Ejecutar laboratorios multi-lenguaje (C99, PID, Bash)
+        run: python3 -m unittest discover -s laboratorios -v
       - name: Ejecutar pruebas del banco de quizzes
         run: |
           python3 -m unittest discover -s quizzes -v

@@ -118,6 +118,7 @@ def construir_html() -> str:
       <button class="tab-btn active" onclick="showTab('roadmap', this)">Roadmap y Proyectos</button>
       <button class="tab-btn" onclick="showTab('binario', this)">Playground Binario / IEEE-754</button>
       <button class="tab-btn" onclick="showTab('regex', this)">Playground Regex &amp; chmod</button>
+      <button class="tab-btn" onclick="showTab('pid', this)">Playground Control PID</button>
       <button class="tab-btn" onclick="showTab('quiz', this)">Quiz Feynman ({len(preguntas)})</button>
       <button class="tab-btn" onclick="showTab('fmhy', this)">Catálogo FMHY ({len(recursos)})</button>
     </nav>
@@ -143,6 +144,14 @@ def construir_html() -> str:
       <div class="card"><h3>Guía 04 · Embebidos, IoT y RTOS</h3><p>Arduino/ESP32/Raspberry Pi, UART/I2C/SPI, MQTT y simuladores Wokwi/Falstad.</p><a href="../guias/04-embebidos-iot-y-rtos.md">Abrir guía</a></div>
       <div class="card"><h3>Guía 05 · POO y Arquitectura</h3><p>Composición vs herencia, puertos/repositorios y diseño sin sobreingeniería.</p><a href="../guias/05-poo-patrones-y-arquitectura.md">Abrir guía</a></div>
       <div class="card"><h3>Guía 06 · Nginx, Docker y Despliegue</h3><p>TLS, proxy inverso, builds multicapa y seguridad operativa.</p><a href="../guias/06-redes-nginx-docker-y-despliegue.md">Abrir guía</a></div>
+      <div class="card"><h3>Guía 07 · Web, TypeScript y Event Loop</h3><p>Microtareas vs macrotareas, límites de TypeScript, CORS y prevención de XSS.</p><a href="../guias/07-web-typescript-y-apis-modernas.md">Abrir guía</a></div>
+      <div class="card"><h3>Guía 08 · Control PID, Señales e IA</h3><p>Lazo cerrado con anti-windup, Nyquist, simulación y evaluación sin fuga de datos.</p><a href="../guias/08-control-automatico-senales-e-ia-aplicada.md">Abrir guía</a></div>
+    </div>
+    <h2 style="margin-top:1.5rem">3. Laboratorios multi-lenguaje (C, Bash, PID)</h2>
+    <div class="grid">
+      <div class="card"><h3>C99 · Memoria y Overflow</h3><p>Suma segura contra desbordamiento y copia acotada sin lectura fuera de rango.</p><a href="../laboratorios/c_memoria/buffer_seguro.c">Ver código C</a></div>
+      <div class="card"><h3>Control PID Discreto</h3><p>Simulador en Python con anti-windup y pruebas de convergencia.</p><a href="../laboratorios/control_pid/simulador_pid.py">Ver simulador</a></div>
+      <div class="card"><h3>Bash Estricto</h3><p>Auditoría reproducible de entorno con <code>set -euo pipefail</code>.</p><a href="../laboratorios/bash_diagnostico/verificar_entorno.sh">Ver script</a></div>
     </div>
   </section>
 
@@ -169,6 +178,20 @@ def construir_html() -> str:
         <label>Octal (3 dígitos 0-7):</label><input id="chOct" value="750" maxlength="3" oninput="runChmod()" style="margin:.35rem 0">
         <div id="chOut" class="mono" style="margin-top:.6rem"></div>
       </div>
+    </div>
+  </section>
+
+  <section id="pid" class="panel">
+    <h2>Playground · Simulador de Lazo Cerrado PID (con anti-windup)</h2>
+    <div class="card">
+      <div class="grid" style="margin-bottom:.75rem">
+        <div><label>Setpoint: <b id="spVal">50</b></label><input type="range" id="spIn" min="10" max="90" value="50" oninput="runPid()"></div>
+        <div><label>Kp: <b id="kpVal">2.4</b></label><input type="range" id="kpIn" min="0.2" max="8" step="0.2" value="2.4" oninput="runPid()"></div>
+        <div><label>Ki: <b id="kiVal">1.2</b></label><input type="range" id="kiIn" min="0" max="4" step="0.1" value="1.2" oninput="runPid()"></div>
+        <div><label>Kd: <b id="kdVal">0.15</b></label><input type="range" id="kdIn" min="0" max="2" step="0.05" value="0.15" oninput="runPid()"></div>
+      </div>
+      <div id="pidStats" class="mono" style="margin-bottom:.5rem"></div>
+      <svg id="pidSvg" viewBox="0 0 600 220" style="width:100%;max-height:240px;background:#0b1220;border:1px solid var(--line);border-radius:.5rem"></svg>
     </div>
   </section>
 
@@ -287,7 +310,40 @@ function renderFmhy() {{
   ).join('');
 }}
 
-calcBinario(); runRegex(); runChmod(); renderQuiz(); renderFmhy();
+function runPid() {{
+  const sp = Number(document.getElementById('spIn').value);
+  const kp = Number(document.getElementById('kpIn').value);
+  const ki = Number(document.getElementById('kiIn').value);
+  const kd = Number(document.getElementById('kdIn').value);
+  document.getElementById('spVal').textContent = sp;
+  document.getElementById('kpVal').textContent = kp;
+  document.getElementById('kiVal').textContent = ki;
+  document.getElementById('kdVal').textContent = kd;
+  let y = 0, integral = 0, prev = sp, dt = 0.1;
+  const pts = [];
+  for (let k = 0; k < 100; k++) {{
+    const err = sp - y, der = (err - prev) / dt, ic = integral + err * dt;
+    const raw = kp * err + ki * ic + kd * der;
+    let u = raw;
+    if (raw > 100) {{ u = 100; if (err < 0) integral = ic; }}
+    else if (raw < -100) {{ u = -100; if (err > 0) integral = ic; }}
+    else {{ integral = ic; }}
+    y = y + dt * (-0.5 * y + 0.5 * u);
+    prev = err;
+    pts.push(y);
+  }}
+  const maxY = Math.max(sp * 1.25, ...pts, 10);
+  const mapY = v => (205 - (v / maxY) * 185).toFixed(1);
+  const poly = pts.map((v, i) => `${{(i * 6).toFixed(1)}},${{mapY(v)}}`).join(' ');
+  const spY = mapY(sp);
+  document.getElementById('pidSvg').innerHTML =
+    `<line x1="0" y1="${{spY}}" x2="600" y2="${{spY}}" stroke="#f59e0b" stroke-dasharray="5,5" stroke-width="1.5"/>` +
+    `<polyline fill="none" stroke="#38bdf8" stroke-width="2.5" points="${{poly}}"/>`;
+  const pico = Math.max(...pts);
+  document.getElementById('pidStats').textContent = `Final=${{pts[pts.length-1].toFixed(2)}} | Pico=${{pico.toFixed(2)}} | Error final=${{Math.abs(sp - pts[pts.length-1]).toFixed(2)}}`;
+}}
+
+calcBinario(); runRegex(); runChmod(); runPid(); renderQuiz(); renderFmhy();
 </script>
 </body>
 </html>

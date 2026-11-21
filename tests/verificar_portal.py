@@ -25,8 +25,8 @@ def main() -> int:
         print("FALLO: dominio inválido fnhy.net encontrado en docs/index.html")
         return 1
     preguntas = json.loads((RAIZ / "quizzes" / "banco_preguntas.json").read_text(encoding="utf-8"))
-    if len(preguntas) < 20:
-        print(f"FALLO: se esperaban al menos 20 preguntas en el quiz, hay {len(preguntas)}")
+    if len(preguntas) < 26:
+        print(f"FALLO: se esperaban al menos 26 preguntas en el quiz, hay {len(preguntas)}")
         return 1
     print(f"OK: docs/index.html sincronizado, autocontenido y con {len(preguntas)} preguntas del quiz.")
     return 0
