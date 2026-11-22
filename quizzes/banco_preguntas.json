@@ -10,7 +10,8 @@
       "Python convierte 0.1 en cadena antes de sumarlo"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Un flotante binario solo representa mitades exactas (1/2, 1/4, 1/8...), igual que 1/3 en base decimal es infinito. Para dinero se usa Decimal o centavos enteros."
+    "explicacion_feynman": "Un flotante binario solo representa mitades exactas (1/2, 1/4, 1/8...), igual que 1/3 en base decimal es infinito. Para dinero se usa Decimal o centavos enteros.",
+    "nivel": "novato"
   },
   {
     "id": "etapa1-atomico",
@@ -23,7 +24,8 @@
       "Permite usar eval() de forma segura al leer el JSON"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Es como escribir la nueva lista en una hoja aparte antes de colgarla sobre la vieja: si te interrumpen a mitad de frase, la lista anterior sigue intacta."
+    "explicacion_feynman": "Es como escribir la nueva lista en una hoja aparte antes de colgarla sobre la vieja: si te interrumpen a mitad de frase, la lista anterior sigue intacta.",
+    "nivel": "novato"
   },
   {
     "id": "etapa2-dobles",
@@ -36,7 +38,8 @@
       "Que dos objetos distintos con igual título se distinguen por ID"
     ],
     "correcta": 2,
-    "explicacion_feynman": "Probar al árbitro en memoria confirma que conoce las reglas del juego, pero no demuestra que la libreta física tenga papel ni que el bolígrafo funcione."
+    "explicacion_feynman": "Probar al árbitro en memoria confirma que conoce las reglas del juego, pero no demuestra que la libreta física tenga papel ni que el bolígrafo funcione.",
+    "nivel": "intermedio"
   },
   {
     "id": "etapa3-concurrencia",
@@ -49,7 +52,8 @@
       "Desactivar las claves foráneas en SQLite"
     ],
     "correcta": 2,
-    "explicacion_feynman": "Si dos taquilleros miran la caja y luego restan, prometen más entradas de las que hay. Con la condición dentro del UPDATE, el motor evalúa y descuenta en un turno único."
+    "explicacion_feynman": "Si dos taquilleros miran la caja y luego restan, prometen más entradas de las que hay. Con la condición dentro del UPDATE, el motor evalúa y descuenta en un turno único.",
+    "nivel": "intermedio"
   },
   {
     "id": "etapa3-idempotencia",
@@ -62,7 +66,8 @@
       "Borrar la clave anterior y reiniciar la secuencia"
     ],
     "correcta": 2,
-    "explicacion_feynman": "El número de serie del recibo solo puede devolver el mismo recibo original; si alguien presenta el mismo número con otra cantidad distinta, es un conflicto que debe rechazarse."
+    "explicacion_feynman": "El número de serie del recibo solo puede devolver el mismo recibo original; si alguien presenta el mismo número con otra cantidad distinta, es un conflicto que debe rechazarse.",
+    "nivel": "intermedio"
   },
   {
     "id": "etapa4-autorizacion",
@@ -75,7 +80,8 @@
       "Overflow de complemento a dos"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Mostrar el carné en la puerta del hotel demuestra quién eres (autenticación), pero no te autoriza a abrir la habitación 9 de otro huésped."
+    "explicacion_feynman": "Mostrar el carné en la puerta del hotel demuestra quién eres (autenticación), pero no te autoriza a abrir la habitación 9 de otro huésped.",
+    "nivel": "avanzado"
   },
   {
     "id": "etapa5-readiness",
@@ -88,7 +94,8 @@
       "Ninguno debe existir en producción"
     ],
     "correcta": 2,
-    "explicacion_feynman": "Si se va la luz en el banco, despedir y volver a contratar al cajero cada 10 segundos no arregla la caja; solo cierras la ventanilla al público (readiness) hasta que vuelva la luz."
+    "explicacion_feynman": "Si se va la luz en el banco, despedir y volver a contratar al cajero cada 10 segundos no arregla la caja; solo cierras la ventanilla al público (readiness) hasta que vuelva la luz.",
+    "nivel": "avanzado"
   },
   {
     "id": "etapa6-outbox",
@@ -101,7 +108,8 @@
       "Porque desactiva la caché TTL automáticamente"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Anotas la venta y dejas la carta en la bandeja de salida del mismo libro contable; aunque el mensajero entregue el sobre dos veces luego, quien recibe tacha el código único para no repetir el efecto."
+    "explicacion_feynman": "Anotas la venta y dejas la carta en la bandeja de salida del mismo libro contable; aunque el mensajero entregue el sobre dos veces luego, quien recibe tacha el código único para no repetir el efecto.",
+    "nivel": "avanzado"
   },
   {
     "id": "guia-binario",
@@ -114,7 +122,8 @@
       "-256 a 255"
     ],
     "correcta": 2,
-    "explicacion_feynman": "El bit más significativo tiene peso negativo (-128), por eso con 8 bits los negativos llegan hasta -128 y los positivos hasta +127 (incluyendo el 0)."
+    "explicacion_feynman": "El bit más significativo tiene peso negativo (-128), por eso con 8 bits los negativos llegan hasta -128 y los positivos hasta +127 (incluyendo el 0).",
+    "nivel": "novato"
   },
   {
     "id": "guia-lenguajes",
@@ -127,7 +136,8 @@
       "Solo funciona interpretado línea por línea"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Rust actúa como un arquitecto que revisa los planos antes de abrir la obra: prohíbe al compilar que dos escriban a la vez en la misma hoja o usen una mesa ya recogida."
+    "explicacion_feynman": "Rust actúa como un arquitecto que revisa los planos antes de abrir la obra: prohíbe al compilar que dos escriban a la vez en la misma hoja o usen una mesa ya recogida.",
+    "nivel": "intermedio"
   },
   {
     "id": "guia-linux-contenedores",
@@ -140,7 +150,8 @@
       "Los contenedores no aíslan archivos ni procesos"
     ],
     "correcta": 0,
-    "explicacion_feynman": "Una VM es otra casa con cimientos propios; un contenedor es un apartamento con llave y muebles propios que comparte la caldera central (el kernel) del edificio."
+    "explicacion_feynman": "Una VM es otra casa con cimientos propios; un contenedor es un apartamento con llave y muebles propios que comparte la caldera central (el kernel) del edificio.",
+    "nivel": "intermedio"
   },
   {
     "id": "guia-embebidos",
@@ -153,7 +164,8 @@
       "Porque convierte I2C en SPI"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Usar delay() es taparse los oídos mirando la olla cinco minutos; usar millis() o un RTOS permite mirar el reloj sin dejar de escuchar el timbre ni los sensores."
+    "explicacion_feynman": "Usar delay() es taparse los oídos mirando la olla cinco minutos; usar millis() o un RTOS permite mirar el reloj sin dejar de escuchar el timbre ni los sensores.",
+    "nivel": "avanzado"
   },
   {
     "id": "guia-poo-composicion",
@@ -166,7 +178,8 @@
       "Porque evita escribir tests unitarios"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Usar un enchufe estándar en vez de soldar la lámpara directo a los cables de la pared te deja cambiar de bombilla o repositorio sin picar el muro."
+    "explicacion_feynman": "Usar un enchufe estándar en vez de soldar la lámpara directo a los cables de la pared te deja cambiar de bombilla o repositorio sin picar el muro.",
+    "nivel": "intermedio"
   },
   {
     "id": "guia-nginx-proxy",
@@ -179,7 +192,8 @@
       "Las peticiones GET se convierten automáticamente en DELETE"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Si el recepcionista entrega el sobre sin anotar quién lo trajo de la calle ni si venía sellado con lacre (HTTPS), el cocinero de adentro cree que todos los pedidos nacieron en la puerta interna."
+    "explicacion_feynman": "Si el recepcionista entrega el sobre sin anotar quién lo trajo de la calle ni si venía sellado con lacre (HTTPS), el cocinero de adentro cree que todos los pedidos nacieron en la puerta interna.",
+    "nivel": "avanzado"
   },
   {
     "id": "guia-docker-multicapa",
@@ -192,7 +206,8 @@
       "Para desactivar el cifrado TLS en Nginx"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Es construir los muebles en el taller con todas las sierras (etapa builder) y llevar al apartamento solo el mueble terminado (etapa runtime), sin cargar con la caja de herramientas ni las llaves de tu casa (.env)."
+    "explicacion_feynman": "Es construir los muebles en el taller con todas las sierras (etapa builder) y llevar al apartamento solo el mueble terminado (etapa runtime), sin cargar con la caja de herramientas ni las llaves de tu casa (.env).",
+    "nivel": "avanzado"
   },
   {
     "id": "cheat-regex-redos",
@@ -205,7 +220,8 @@
       "Cambia los permisos UNIX a 777"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Un colador con bucles dentro de bucles obliga al motor a probar miles de millones de caminos cuando una palabra larga casi encaja pero falla al final."
+    "explicacion_feynman": "Un colador con bucles dentro de bucles obliga al motor a probar miles de millones de caminos cuando una palabra larga casi encaja pero falla al final.",
+    "nivel": "intermedio"
   },
   {
     "id": "cheat-chmod-unix",
@@ -218,7 +234,8 @@
       "Ejecución exclusiva como root durante 750 segundos"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Cada dígito suma lectura (4), escritura (2) y ejecución (1): 7=4+2+1 (todo), 5=4+1 (leer y ejecutar), 0=nada para terceros."
+    "explicacion_feynman": "Cada dígito suma lectura (4), escritura (2) y ejecución (1): 7=4+2+1 (todo), 5=4+1 (leer y ejecutar), 0=nada para terceros.",
+    "nivel": "novato"
   },
   {
     "id": "cheat-gpio-voltaje",
@@ -231,7 +248,8 @@
       "Que el baudrate se duplique automáticamente"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Meter 5 V en una entrada diseñada para 3.3 V es conectar una manguera de bomberos a una tubería doméstica: puede reventar el sello interno del pin."
+    "explicacion_feynman": "Meter 5 V en una entrada diseñada para 3.3 V es conectar una manguera de bomberos a una tubería doméstica: puede reventar el sello interno del pin.",
+    "nivel": "avanzado"
   },
   {
     "id": "cheat-i2c-gnd",
@@ -244,7 +262,8 @@
       "Porque FreeRTOS bloquea I2C por defecto"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Medir voltajes sin compartir GND es medir la altura de dos personas que están en pisos distintos sin saber a qué altura está el suelo del otro."
+    "explicacion_feynman": "Medir voltajes sin compartir GND es medir la altura de dos personas que están en pisos distintos sin saber a qué altura está el suelo del otro.",
+    "nivel": "avanzado"
   },
   {
     "id": "cheat-freertos-isr",
@@ -257,7 +276,8 @@
       "Deshabilitar el watchdog indefinidamente"
     ],
     "correcta": 1,
-    "explicacion_feynman": "La interrupción es tocar el timbre rápido para dejar un recado en el buzón (`FromISR`), no quedarse a charlar dentro de la puerta bloqueando todas las demás llamadas."
+    "explicacion_feynman": "La interrupción es tocar el timbre rápido para dejar un recado en el buzón (`FromISR`), no quedarse a charlar dentro de la puerta bloqueando todas las demás llamadas.",
+    "nivel": "avanzado"
   },
   {
     "id": "guia-web-eventloop",
@@ -270,7 +290,8 @@
       "JavaScript bloquea la pestaña hasta que el usuario haga clic"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Las promesas pendientes son notas urgentes pegadas en el timbre (microtareas): el camarero las vacía todas antes de coger el siguiente recado normal (`setTimeout`)."
+    "explicacion_feynman": "Las promesas pendientes son notas urgentes pegadas en el timbre (microtareas): el camarero las vacía todas antes de coger el siguiente recado normal (`setTimeout`).",
+    "nivel": "intermedio"
   },
   {
     "id": "guia-web-typescript-cors",
@@ -283,7 +304,8 @@
       "Porque CORS cifra la base de datos"
     ],
     "correcta": 1,
-    "explicacion_feynman": "TypeScript es el corrector ortográfico antes de imprimir el menú y CORS es la regla del portero para otros vecinos del navegador; un cliente externo por terminal salta ambos y llama directo a tu cocina."
+    "explicacion_feynman": "TypeScript es el corrector ortográfico antes de imprimir el menú y CORS es la regla del portero para otros vecinos del navegador; un cliente externo por terminal salta ambos y llama directo a tu cocina.",
+    "nivel": "intermedio"
   },
   {
     "id": "guia-control-pid",
@@ -296,7 +318,8 @@
       "Que la derivada suavice la respuesta"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Si pisas el acelerador a fondo cuesta arriba y sigues anotando en una libreta que 'te falta velocidad' durante diez minutos, al llegar a la cima seguirás acelerando al máximo mucho tiempo antes de soltar."
+    "explicacion_feynman": "Si pisas el acelerador a fondo cuesta arriba y sigues anotando en una libreta que 'te falta velocidad' durante diez minutos, al llegar a la cima seguirás acelerando al máximo mucho tiempo antes de soltar.",
+    "nivel": "avanzado"
   },
   {
     "id": "guia-ia-leakage",
@@ -309,7 +332,8 @@
       "Medir la latencia p95 en producción"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Es dejar que el estudiante mire parte de las respuestas del examen final mientras practica: saca 10 en el simulacro, pero falla frente a datos nuevos."
+    "explicacion_feynman": "Es dejar que el estudiante mire parte de las respuestas del examen final mientras practica: saca 10 en el simulacro, pero falla frente a datos nuevos.",
+    "nivel": "avanzado"
   },
   {
     "id": "lab-c-overflow",
@@ -322,7 +346,8 @@
       "Porque el compilador convierte `int` en cadena de texto"
     ],
     "correcta": 1,
-    "explicacion_feynman": "A diferencia del odómetro predecible de los enteros sin signo, desbordar un entero con signo en C rompe las reglas del contrato con el compilador y este puede optimizar o romper tu programa."
+    "explicacion_feynman": "A diferencia del odómetro predecible de los enteros sin signo, desbordar un entero con signo en C rompe las reglas del contrato con el compilador y este puede optimizar o romper tu programa.",
+    "nivel": "intermedio"
   },
   {
     "id": "lab-bash-estricto",
@@ -335,7 +360,8 @@
       "Abre un puerto HTTP en el 8080"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Sin ese cinturón de seguridad, un script Bash sigue adelante aunque un paso anterior haya fallado y puede borrar o desplegar sobre una variable vacía."
+    "explicacion_feynman": "Sin ese cinturón de seguridad, un script Bash sigue adelante aunque un paso anterior haya fallado y puede borrar o desplegar sobre una variable vacía.",
+    "nivel": "novato"
   },
   {
     "id": "lab-cpp-raii",
@@ -348,7 +374,8 @@
       "Porque duplica el puntero en disco"
     ],
     "correcta": 1,
-    "explicacion_feynman": "RAII ata la vida del recurso a la puerta de la habitación: aunque salgas corriendo por una emergencia (excepción), el resorte cierra la puerta y libera la llave automáticamente."
+    "explicacion_feynman": "RAII ata la vida del recurso a la puerta de la habitación: aunque salgas corriendo por una emergencia (excepción), el resorte cierra la puerta y libera la llave automáticamente.",
+    "nivel": "intermedio"
   },
   {
     "id": "cheat-fetch-ok",
@@ -361,7 +388,8 @@
       "Convierte el código 500 en 200"
     ],
     "correcta": 1,
-    "explicacion_feynman": "El cartero cumplió trayendo la carta de vuelta; que dentro ponga 'error 500' es un problema de contenido que debes revisar leyendo `resp.ok`."
+    "explicacion_feynman": "El cartero cumplió trayendo la carta de vuelta; que dentro ponga 'error 500' es un problema de contenido que debes revisar leyendo `resp.ok`.",
+    "nivel": "novato"
   },
   {
     "id": "cheat-big-o-cola",
@@ -374,7 +402,8 @@
       "Porque `popleft()` borra todo el arreglo"
     ],
     "correcta": 1,
-    "explicacion_feynman": "En un array contiguo, si sale la primera persona de una fila de asientos numerados, todas las demás tienen que levantarse y correrse un asiento."
+    "explicacion_feynman": "En un array contiguo, si sale la primera persona de una fila de asientos numerados, todas las demás tienen que levantarse y correrse un asiento.",
+    "nivel": "intermedio"
   },
   {
     "id": "digital-nand-universal",
@@ -387,7 +416,8 @@
       "Porque reemplaza a PostgreSQL"
     ],
     "correcta": 1,
-    "explicacion_feynman": "NAND es como el bloque básico de LEGO con el que puedes armar todas las demás piezas lógicas de una CPU, desde un inversor hasta un sumador completo."
+    "explicacion_feynman": "NAND es como el bloque básico de LEGO con el que puedes armar todas las demás piezas lógicas de una CPU, desde un inversor hasta un sumador completo.",
+    "nivel": "novato"
   },
   {
     "id": "guia09-se-arquitectura",
@@ -400,7 +430,8 @@
       "Convierte cualquier regla en una red neuronal profunda automáticamente"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Es separar el reglamento (Base de Conocimientos) del árbitro (Motor de Inferencia): cuando cambia una norma, actualizas el reglamento sin operar al árbitro."
+    "explicacion_feynman": "Es separar el reglamento (Base de Conocimientos) del árbitro (Motor de Inferencia): cuando cambia una norma, actualizas el reglamento sin operar al árbitro.",
+    "nivel": "master"
   },
   {
     "id": "guia09-forward-vs-backward",
@@ -413,7 +444,8 @@
       "Únicamente cuando no existen hechos iniciales en memoria"
     ],
     "correcta": 1,
-    "explicacion_feynman": "Forward es ver qué platos salen con lo que ya hay en la nevera; Backward es elegir primero la receta (la meta) y comprobar solo los ingredientes que necesita."
+    "explicacion_feynman": "Forward es ver qué platos salen con lo que ya hay en la nevera; Backward es elegir primero la receta (la meta) y comprobar solo los ingredientes que necesita.",
+    "nivel": "master"
   },
   {
     "id": "guia09-refraccion-rete",
@@ -426,7 +458,8 @@
       "Reiniciar el servidor HTTP tras cada regla evaluada"
     ],
     "correcta": 0,
-    "explicacion_feynman": "La refracción es tachar de la lista una pista ya procesada para que el detective no vuelva a deducir lo mismo mil veces sobre los mismos datos."
+    "explicacion_feynman": "La refracción es tachar de la lista una pista ya procesada para que el detective no vuelva a deducir lo mismo mil veces sobre los mismos datos.",
+    "nivel": "master"
   },
   {
     "id": "guia09-mycin-cf",
@@ -439,7 +472,8 @@
       "0.42 (multiplicación directa)"
     ],
     "correcta": 2,
-    "explicacion_feynman": "La segunda pista aporta el 70% de la duda que aún quedaba por cubrir (1 - 0.6 = 0.4), así que 0.6 + 0.7 * 0.4 = 0.88 sin pasarse nunca de 1.0."
+    "explicacion_feynman": "La segunda pista aporta el 70% de la duda que aún quedaba por cubrir (1 - 0.6 = 0.4), así que 0.6 + 0.7 * 0.4 = 0.88 sin pasarse nunca de 1.0.",
+    "nivel": "master"
   },
   {
     "id": "guia09-logica-difusa",
@@ -452,7 +486,8 @@
       "Compila las reglas difusas directamente a ensamblador x86"
     ],
     "correcta": 0,
-    "explicacion_feynman": "Un actuador físico no entiende 'abre bastante la válvula'; el centroide busca el punto de equilibrio de la figura agregada para darle un número exacto (ej. 74.5%)."
+    "explicacion_feynman": "Un actuador físico no entiende 'abre bastante la válvula'; el centroide busca el punto de equilibrio de la figura agregada para darle un número exacto (ej. 74.5%).",
+    "nivel": "master"
   },
   {
     "id": "guia09-neurosimbolico",
@@ -465,6 +500,175 @@
       "Solo se usa encadenamiento hacia adelante para entrenar pesos de redes neuronales"
     ],
     "correcta": 1,
-    "explicacion_feynman": "El modelo neuronal actúa como traductor que lee documentos desordenados y los pasa a fichas limpias; el motor simbólico es el juez que aplica las normas verificables paso a paso."
+    "explicacion_feynman": "El modelo neuronal actúa como traductor que lee documentos desordenados y los pasa a fichas limpias; el motor simbólico es el juez que aplica las normas verificables paso a paso.",
+    "nivel": "master"
+  },
+  {
+    "id": "guia10-occurs-check",
+    "etapa": "guia-10-primer-orden",
+    "nivel": "master",
+    "pregunta": "¿Qué previene el *occurs check* durante la unificación de Robinson?",
+    "opciones": [
+      "Evita unificar una variable `X` con un término que la contiene (ej. `X = lista(X)`), impidiendo estructuras cíclicas infinitas",
+      "Impide que dos constantes diferentes tengan el mismo nombre en Python",
+      "Ordena alfabéticamente los átomos de una ontología OWL",
+      "Reduce el consumo de memoria de los nodos beta en Rete"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Es como prohibir escribir 'la Caja A contiene dentro otra Caja A idéntica'; sin occurs check el motor entra en un bucle infinito intentando desenrollar la definición."
+  },
+  {
+    "id": "guia10-standardizing-apart",
+    "etapa": "guia-10-primer-orden",
+    "nivel": "master",
+    "pregunta": "¿Por qué se renombran las variables de una cláusula (*standardizing apart*) antes de unificar en resolución SLD?",
+    "opciones": [
+      "Para que la variable `X` de la regla invocada no choque con otra variable llamada `X` en la meta o llamada padre",
+      "Para convertir automáticamente variables locales en constantes globales",
+      "Para eliminar la necesidad de backtracking",
+      "Para cifrar las consultas antes de enviarlas a la base de hechos"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Es como darle un número de expediente distinto a los formularios de cada cliente: aunque ambos formularios tengan un campo llamado 'Nombre', no deben sobrescribirse entre sí."
+  },
+  {
+    "id": "guia10-clausula-horn",
+    "etapa": "guia-10-primer-orden",
+    "nivel": "master",
+    "pregunta": "¿Qué caracteriza a una cláusula de Horn definida (regla estilo Prolog)?",
+    "opciones": [
+      "Tiene como máximo un literal positivo (la cabeza) y cero o más literales negativos (condiciones del cuerpo)",
+      "Solo admite proposiciones sin variables ni predicados",
+      "Requiere al menos tres cabezas disyuntivas positivas por regla",
+      "Es exclusiva de redes neuronales convolucionales"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Una cláusula de Horn es una promesa clara 'SI se cumplen A y B, ENTONCES ocurre C': una sola conclusión directa evita explosiones ambiguas al buscar pruebas."
+  },
+  {
+    "id": "guia10-sld-backtracking",
+    "etapa": "guia-10-primer-orden",
+    "nivel": "master",
+    "pregunta": "Durante la resolución SLD, si una rama elegida falla al probar una submeta, ¿qué hace el motor?",
+    "opciones": [
+      "Deshace las ligaduras de esa rama (*backtracking*) y prueba la siguiente cláusula compatible",
+      "Borra toda la base de hechos de memoria de trabajo",
+      "Acepta la submeta como verdadera por defecto",
+      "Reinicia el sistema operativo para limpiar la pila"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Igual que recorrer un laberinto marcando cruces con tiza: si un pasillo termina en muro, vuelves al último cruce y tomas el siguiente camino sin perder el mapa."
+  },
+  {
+    "id": "guia11-rete-alfa-beta",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "En el algoritmo Rete, ¿qué diferencia a los nodos alfa de los nodos beta?",
+    "opciones": [
+      "Los nodos alfa filtran condiciones sobre un único hecho y los nodos beta combinan (join) hechos parciales de múltiples condiciones",
+      "Los nodos alfa solo ejecutan código C++ y los beta código SQL",
+      "Los nodos beta son únicamente para salida gráfica HTML",
+      "No hay diferencia; ambos borran toda la memoria en cada ciclo"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Los nodos alfa son filtros de una sola ficha ('¿temperatura > 90?'), mientras que los nodos beta son mesas de emparejamiento donde cruzas dos fichas compatibles ('¿mismo servidor?')."
+  },
+  {
+    "id": "guia11-rete-incremental",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "¿Por qué Rete supera al barrido ingenuo cuando tienes miles de reglas y pocos hechos cambian por ciclo?",
+    "opciones": [
+      "Porque memoriza coincidencias parciales y solo propaga el delta del hecho añadido o retirado",
+      "Porque ignora el 90% de las reglas aleatoriamente",
+      "Porque convierte las reglas en consultas DNS",
+      "Porque prohíbe usar variables en las premisas"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Como una hoja de cálculo: al editar una celda no recalculas todo el libro, solo las celdas que dependen de esa entrada."
+  },
+  {
+    "id": "guia11-owl-owa",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "Bajo la Suposición de Mundo Abierto (OWA) de OWL, si la ontología no afirma que `servidor_3` tenga respaldo, ¿qué concluye el razonador?",
+    "opciones": [
+      "Que el dato es desconocido, no necesariamente falso, salvo que un axioma explícito lo niegue o cierre la clase",
+      "Que `servidor_3` no tiene respaldo con 100% de certeza",
+      "Que la ontología es sintácticamente inválida",
+      "Elimina el individuo `servidor_3` del grafo RDF"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "En Mundo Cerrado (SQL) lo que no está en la tabla no existe; en Mundo Abierto (OWL) una ficha incompleta significa 'aún no nos lo han dicho'."
+  },
+  {
+    "id": "guia11-rdf-tripleta",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "¿Cuál es la unidad estructural mínima de un grafo de conocimiento RDF?",
+    "opciones": [
+      "La tripleta `(sujeto, predicado, objeto)`",
+      "Una matriz 4x4 de pesos flotantes",
+      "Un archivo binario ELF sin símbolos",
+      "Un paquete TCP con cabecera SYN/ACK"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Todo hecho semántico se expresa como una oración atómica de tres piezas: quién (`sujeto`), qué relación (`predicado`) y con quién o qué valor (`objeto`)."
+  },
+  {
+    "id": "guia11-bayes-explaining-away",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "En una Red Bayesiana `FallaDisco -> LatenciaAlta <- PicoRed`, observas `LatenciaAlta=True` y luego confirmas `PicoRed=True`. ¿Qué ocurre con `P(FallaDisco | LatenciaAlta, PicoRed)`?",
+    "opciones": [
+      "Disminuye (*explaining away*) porque `PicoRed` ya explica la latencia observada",
+      "Aumenta automáticamente al 100%",
+      "Permanece idéntica porque las causas nunca interactúan ante evidencia común",
+      "Se vuelve negativa"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Si ves el suelo mojado sospechas que llovió o falló el aspersor; al confirmar que alguien encendió el aspersor, tu sospecha de lluvia baja porque la pista ya quedó explicada."
+  },
+  {
+    "id": "guia11-bayes-dag",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "¿Qué propiedad topológica es obligatoria en toda Red Bayesiana estándar?",
+    "opciones": [
+      "Debe ser un grafo dirigido acíclico (DAG) sin ciclos de dependencia",
+      "Debe tener al menos un ciclo dirigido para converger",
+      "Cada nodo debe tener exactamente dos padres",
+      "Todas las probabilidades condicionales deben ser 0 o 1"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Sin ciclos puedes descomponer limpiamente la probabilidad conjunta multiplicando cada nodo dado sus padres sin caer en definiciones circulares."
+  },
+  {
+    "id": "guia11-vv-subsunción",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "En Verificación y Validación (V&V), tienes `R1: SI A -> X` y `R2: SI A Y B -> X`. ¿Qué anomalía existe?",
+    "opciones": [
+      "Subsunción / redundancia: `R1` ya cubre todos los casos de `R2` con menos condiciones",
+      "Conflicto directo de valores opuestos",
+      "Desbordamiento entero de IEEE-754",
+      "Deadlock entre hilos POSIX"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Si basta con tener llave maestra (`A`) para abrir la puerta (`X`), pedir 'llave maestra Y contraseña (`A y B`)' para lo mismo sobra y complica mantener la base."
+  },
+  {
+    "id": "guia11-vv-conflicto",
+    "etapa": "guia-11-rete-owl-bayes",
+    "nivel": "master",
+    "pregunta": "¿Por qué conviene ejecutar auditoría estática V&V de conflictos, ciclos e inalcanzables en CI antes de desplegar un sistema experto?",
+    "opciones": [
+      "Para detectar reglas contradictorias, muertas o circulares antes de que causen decisiones erráticas en producción",
+      "Para saltarse las pruebas unitarias de los algoritmos",
+      "Para desactivar los logs de auditoría (*How/Why*)",
+      "Para aumentar intencionalmente la latencia de inferencia"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Es la inspección de planos eléctricos antes de dar corriente al edificio: detectas cortocircuitos y cables que no van a ningún sitio antes de encender el sistema."
   }
 ]

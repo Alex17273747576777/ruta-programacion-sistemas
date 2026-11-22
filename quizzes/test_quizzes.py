@@ -10,10 +10,11 @@ from quiz_cli import cargar_preguntas, evaluar_respuestas  # noqa: E402
 class QuizBancoTest(unittest.TestCase):
     def test_banco_completo_y_validacion(self):
         preguntas = cargar_preguntas()
-        self.assertGreaterEqual(len(preguntas), 12)
+        self.assertGreaterEqual(len(preguntas), 48)
         for p in preguntas:
             self.assertEqual(len(p["opciones"]), 4)
             self.assertIn(p["correcta"], (0, 1, 2, 3))
+            self.assertIn(p.get("nivel"), ("novato", "intermedio", "avanzado", "master"))
             self.assertTrue(p["explicacion_feynman"].strip())
 
         todas_ok = [p["correcta"] for p in preguntas]
