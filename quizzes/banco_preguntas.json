@@ -388,5 +388,83 @@
     ],
     "correcta": 1,
     "explicacion_feynman": "NAND es como el bloque básico de LEGO con el que puedes armar todas las demás piezas lógicas de una CPU, desde un inversor hasta un sumador completo."
+  },
+  {
+    "id": "guia09-se-arquitectura",
+    "etapa": "guia-09-sistemas-expertos",
+    "pregunta": "¿Por qué un Sistema Experto separa la Base de Conocimientos del Motor de Inferencia en vez de escribir `if/else` repartidos por toda la aplicación?",
+    "opciones": [
+      "Porque Python no admite más de diez sentencias `if` anidadas",
+      "Permite auditar, actualizar reglas y generar explicaciones (Why/How) sin reescribir la lógica de ejecución",
+      "Elimina la necesidad de pruebas unitarias sobre las reglas",
+      "Convierte cualquier regla en una red neuronal profunda automáticamente"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Es separar el reglamento (Base de Conocimientos) del árbitro (Motor de Inferencia): cuando cambia una norma, actualizas el reglamento sin operar al árbitro."
+  },
+  {
+    "id": "guia09-forward-vs-backward",
+    "etapa": "guia-09-sistemas-expertos",
+    "pregunta": "¿Cuándo conviene usar Encadenamiento hacia Atrás (Backward Chaining) frente a Encadenamiento hacia Adelante (Forward Chaining)?",
+    "opciones": [
+      "Cuando hay miles de sensores emitiendo eventos continuos sin hipótesis previa",
+      "Cuando quieres demostrar o refutar una meta específica pidiendo solo la evidencia mínima necesaria",
+      "Siempre que necesites calcular un centroide difuso de Mamdani",
+      "Únicamente cuando no existen hechos iniciales en memoria"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "Forward es ver qué platos salen con lo que ya hay en la nevera; Backward es elegir primero la receta (la meta) y comprobar solo los ingredientes que necesita."
+  },
+  {
+    "id": "guia09-refraccion-rete",
+    "etapa": "guia-09-sistemas-expertos",
+    "pregunta": "En un motor de reglas de producción, ¿qué evita un bucle infinito cuando una regla ya se disparó sobre los mismos hechos?",
+    "opciones": [
+      "La estrategia de refracción (recordar activaciones ya disparadas) y la red de discriminación Rete",
+      "Bajar el factor de certeza de todas las reglas a cero",
+      "Usar números flotantes de 64 bits en las prioridades",
+      "Reiniciar el servidor HTTP tras cada regla evaluada"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "La refracción es tachar de la lista una pista ya procesada para que el detective no vuelva a deducir lo mismo mil veces sobre los mismos datos."
+  },
+  {
+    "id": "guia09-mycin-cf",
+    "etapa": "guia-09-sistemas-expertos",
+    "pregunta": "Dos reglas independientes concluyen la misma falla con Factores de Certeza MYCIN `CF1 = 0.6` y `CF2 = 0.7`. ¿Cuál es el `CF` combinado?",
+    "opciones": [
+      "1.30 (suma directa)",
+      "0.65 (promedio simple)",
+      "0.88 mediante `CF1 + CF2 * (1 - CF1)`",
+      "0.42 (multiplicación directa)"
+    ],
+    "correcta": 2,
+    "explicacion_feynman": "La segunda pista aporta el 70% de la duda que aún quedaba por cubrir (1 - 0.6 = 0.4), así que 0.6 + 0.7 * 0.4 = 0.88 sin pasarse nunca de 1.0."
+  },
+  {
+    "id": "guia09-logica-difusa",
+    "etapa": "guia-09-sistemas-expertos",
+    "pregunta": "¿Qué función cumple la defusificación (por ejemplo, centroide) al final de un controlador difuso Mamdani?",
+    "opciones": [
+      "Transforma grados lingüísticos agregados (ej. riego medio/alto) en un valor numérico concreto accionable",
+      "Convierte una tabla SQL en tripletas RDF",
+      "Elimina la incertidumbre de los Factores de Certeza negativos",
+      "Compila las reglas difusas directamente a ensamblador x86"
+    ],
+    "correcta": 0,
+    "explicacion_feynman": "Un actuador físico no entiende 'abre bastante la válvula'; el centroide busca el punto de equilibrio de la figura agregada para darle un número exacto (ej. 74.5%)."
+  },
+  {
+    "id": "guia09-neurosimbolico",
+    "etapa": "guia-09-sistemas-expertos",
+    "pregunta": "En un Sistema Experto Híbrido (Neuro-Simbólico) moderno para entornos críticos, ¿qué rol cumple cada componente?",
+    "opciones": [
+      "El LLM dicta las reglas legales sin validación y la base de hechos solo guarda logs",
+      "El modelo neuronal extrae hechos desde lenguaje natural y el motor simbólico/ontología valida y razona con trazabilidad determinista",
+      "Se reemplaza completamente la ontología por temperaturas altas de muestreo",
+      "Solo se usa encadenamiento hacia adelante para entrenar pesos de redes neuronales"
+    ],
+    "correcta": 1,
+    "explicacion_feynman": "El modelo neuronal actúa como traductor que lee documentos desordenados y los pasa a fichas limpias; el motor simbólico es el juez que aplica las normas verificables paso a paso."
   }
 ]

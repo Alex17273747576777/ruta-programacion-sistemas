@@ -51,8 +51,8 @@ def main() -> int:
                 errores.append(f"README.md: enlace roto '{href}'")
 
     etapas = verificar_documentos(RAIZ / "etapas", 6, "etapas", errores)
-    guias = verificar_documentos(RAIZ / "guias", 8, "guías", errores)
-    cheats = verificar_documentos(RAIZ / "cheatsheets", 9, "cheatsheets", errores)
+    guias = verificar_documentos(RAIZ / "guias", 9, "guías", errores)
+    cheats = verificar_documentos(RAIZ / "cheatsheets", 10, "cheatsheets", errores)
 
     if errores:
         for e in errores:

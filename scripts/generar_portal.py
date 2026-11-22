@@ -173,7 +173,7 @@ def construir_html() -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ruta de Programación y Sistemas · Feynman + Playgrounds + FMHY</title>
+<title>Ruta de Programación y Sistemas · Máster en Ingeniería de Sistemas Expertos</title>
 <style>
   :root {{
     --bg: #0f172a; --panel: #1e293b; --line: #334155;
@@ -250,14 +250,15 @@ def construir_html() -> str:
 <body>
 <header>
   <div class="wrap">
-    <span class="badge">Método Richard Feynman completo (4 pasos) · Recursos activos FMHY.net</span>
-    <h1>De Principiante a Ingeniería de Sistemas</h1>
+    <span class="badge">De Novato a Profesional · Máster en Ingeniería de Sistemas Expertos · Método Richard Feynman (4 pasos)</span>
+    <h1>Ruta hacia la Ingeniería de Sistemas Expertos</h1>
     <p style="color:var(--muted);margin:.25rem 0 0">
-      6 etapas con proyectos probados · 5 laboratorios (C99, C++20, Node, PID, Bash) · {len(modulos)} módulos integrados · 5 Playgrounds sin dependencias · Quiz ({len(preguntas)} preguntas).
+      6 etapas con proyectos probados · 6 laboratorios (C99, C++20, Node, PID, Sistema Experto, Bash) · {len(modulos)} módulos integrados · 6 Playgrounds sin dependencias · Quiz ({len(preguntas)} preguntas).
     </p>
     <nav>
       <button class="tab-btn active" onclick="showTab('roadmap', this)">Roadmap y Código</button>
       <button class="tab-btn" onclick="showTab('lector', this)">Lector Completo ({len(modulos)})</button>
+      <button class="tab-btn" onclick="showTab('experto', this)">Motor Experto</button>
       <button class="tab-btn" onclick="showTab('binario', this)">Binario / IEEE-754</button>
       <button class="tab-btn" onclick="showTab('logica', this)">Compuertas &amp; Half-Adder</button>
       <button class="tab-btn" onclick="showTab('regex', this)">Regex &amp; chmod</button>
@@ -286,6 +287,7 @@ def construir_html() -> str:
       <div class="card"><h3>C++20 · RAII y <code>unique_ptr</code></h3><p>Liberación determinista de recursos incluso al lanzar excepciones.</p><a href="{REPO_BLOB}/laboratorios/cpp_raii/raii_pool.cpp" target="_blank" rel="noopener">Ver en GitHub</a></div>
       <div class="card"><h3>Node.js · Event Loop</h3><p>Verificación en vivo de orden sincrónico → microtareas → macrotareas.</p><a href="{REPO_BLOB}/laboratorios/node_event_loop/event_loop_orden.mjs" target="_blank" rel="noopener">Ver en GitHub</a></div>
       <div class="card"><h3>Control PID Discreto</h3><p>Simulador en Python con anti-windup y prueba de convergencia.</p><a href="{REPO_BLOB}/laboratorios/control_pid/simulador_pid.py" target="_blank" rel="noopener">Ver en GitHub</a></div>
+      <div class="card"><h3>Motor de Inferencia (Máster SE)</h3><p>Forward &amp; Backward Chaining con explicación <em>How</em>, MYCIN CF y Lógica Difusa Mamdani.</p><p><button class="link-btn" onclick="abrirModulo('guias/09-sistemas-expertos-motores-inferencia-y-logica-difusa.md')">Leer Guía 09</button> · <a href="{REPO_BLOB}/laboratorios/sistema_experto/motor_inferencia.py" target="_blank" rel="noopener">Ver en GitHub</a></p></div>
       <div class="card"><h3>Bash Estricto</h3><p>Auditoría reproducible de entorno con <code>set -euo pipefail</code>.</p><a href="{REPO_BLOB}/laboratorios/bash_diagnostico/verificar_entorno.sh" target="_blank" rel="noopener">Ver en GitHub</a></div>
     </div>
   </section>
@@ -300,6 +302,36 @@ def construir_html() -> str:
       <div class="card">
         <p style="margin-top:0"><a id="docGhLink" href="{REPO_BLOB}" target="_blank" rel="noopener">Abrir fuente en GitHub</a></p>
         <div id="docViewer"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experto" class="panel">
+    <h2>Playground · Motor de Inferencia Simbólico (Forward/Backward + MYCIN CF)</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Base de Hechos observados (Memoria de Trabajo)</h3>
+        <p style="color:var(--muted);font-size:.9rem">Activa los síntomas observados y elige si deseas deducir todo (<em>Forward</em>) o probar una meta concreta (<em>Backward</em>):</p>
+        <label style="display:flex;align-items:center;gap:.5rem;margin:.35rem 0"><input type="checkbox" id="hLatencia" checked onchange="runExperto()" style="width:auto"> <code>latencia_alta</code> (CF=0.90)</label>
+        <label style="display:flex;align-items:center;gap:.5rem;margin:.35rem 0"><input type="checkbox" id="hPaquetes" checked onchange="runExperto()" style="width:auto"> <code>perdida_paquetes</code> (CF=1.00)</label>
+        <label style="display:flex;align-items:center;gap:.5rem;margin:.35rem 0"><input type="checkbox" id="hCpu" checked onchange="runExperto()" style="width:auto"> <code>cpu_100</code> (CF=0.80)</label>
+        <label style="display:flex;align-items:center;gap:.5rem;margin:.35rem 0"><input type="checkbox" id="hSwap" onchange="runExperto()" style="width:auto"> <code>sin_swap</code> (CF=0.90)</label>
+        <label style="margin-top:.75rem;display:block">Meta para Encadenamiento hacia Atrás:</label>
+        <select id="seMeta" onchange="runExperto()" style="margin-top:.35rem">
+          <option value="alerta_incidente_p1">alerta_incidente_p1</option>
+          <option value="congestion_red">congestion_red</option>
+          <option value="saturacion_nodo">saturacion_nodo</option>
+        </select>
+      </div>
+      <div class="card">
+        <h3>2. Reglas de Producción (Base de Conocimiento)</h3>
+        <ul class="mono" style="padding-left:1.1rem;font-size:.86rem">
+          <li><b>R1:</b> SI <code>latencia_alta</code> Y <code>perdida_paquetes</code> → <code>congestion_red</code> (CF=0.80)</li>
+          <li><b>R2:</b> SI <code>cpu_100</code> Y <code>sin_swap</code> → <code>saturacion_nodo</code> (CF=0.75)</li>
+          <li><b>R3:</b> SI <code>congestion_red</code> → <code>alerta_incidente_p1</code> (CF=0.90)</li>
+          <li><b>R4:</b> SI <code>saturacion_nodo</code> → <code>alerta_incidente_p1</code> (CF=0.85)</li>
+        </ul>
+        <div id="seOut" class="mono" style="margin-top:.75rem"></div>
       </div>
     </div>
   </section>
@@ -554,7 +586,77 @@ function renderFmhy() {{
   ).join('');
 }}
 
-renderDocList(); renderLogic(); calcBinario(); runRegex(); runChmod(); runPid(); renderQuiz(); renderFmhy();
+function combinarCF(a, b) {{
+  if (a > 0 && b > 0) return a + b * (1 - a);
+  if (a < 0 && b < 0) return a + b * (1 + a);
+  const den = 1 - Math.min(Math.abs(a), Math.abs(b));
+  return den === 0 ? 0 : (a + b) / den;
+}}
+
+function runExperto() {{
+  const hechos = {{}};
+  if (document.getElementById('hLatencia').checked) hechos.latencia_alta = 0.90;
+  if (document.getElementById('hPaquetes').checked) hechos.perdida_paquetes = 1.00;
+  if (document.getElementById('hCpu').checked) hechos.cpu_100 = 0.80;
+  if (document.getElementById('hSwap').checked) hechos.sin_swap = 0.90;
+  const reglas = [
+    {{ id: 'R1', ant: ['latencia_alta', 'perdida_paquetes'], con: 'congestion_red', cf: 0.80 }},
+    {{ id: 'R2', ant: ['cpu_100', 'sin_swap'], con: 'saturacion_nodo', cf: 0.75 }},
+    {{ id: 'R3', ant: ['congestion_red'], con: 'alerta_incidente_p1', cf: 0.90 }},
+    {{ id: 'R4', ant: ['saturacion_nodo'], con: 'alerta_incidente_p1', cf: 0.85 }},
+  ];
+
+  const mem = {{ ...hechos }};
+  const disp = new Set();
+  const trazaFwd = [];
+  let cambio = true;
+  while (cambio) {{
+    cambio = false;
+    for (const r of reglas) {{
+      if (disp.has(r.id)) continue;
+      if (r.ant.every(a => (mem[a] || 0) > 0)) {{
+        const cfAnt = Math.min(...r.ant.map(a => mem[a]));
+        const aporte = cfAnt * r.cf;
+        disp.add(r.id);
+        mem[r.con] = mem[r.con] !== undefined ? combinarCF(mem[r.con], aporte) : aporte;
+        trazaFwd.push(`${{r.id}} → ${{r.con}} (aporte=${{aporte.toFixed(4)}}, acumulado=${{mem[r.con].toFixed(4)}})`);
+        cambio = true;
+      }}
+    }}
+  }}
+
+  function backward(meta, vis) {{
+    if (vis.has(meta)) return {{ ok: false, cf: 0, why: [`Ciclo evitado en ${{meta}}`] }};
+    if ((hechos[meta] || 0) > 0) return {{ ok: true, cf: hechos[meta], why: [`Hecho observado: ${{meta}} (${{hechos[meta].toFixed(2)}})`] }};
+    const nv = new Set(vis); nv.add(meta);
+    let cfAcc = null; const why = [];
+    for (const r of reglas.filter(x => x.con === meta)) {{
+      const subs = []; let ok = true; const subWhy = [];
+      for (const a of r.ant) {{
+        const res = backward(a, nv);
+        if (!res.ok) {{ ok = false; break; }}
+        subs.push(res.cf); subWhy.push(...res.why);
+      }}
+      if (ok) {{
+        const cfR = Math.min(...subs) * r.cf;
+        cfAcc = cfAcc === null ? cfR : combinarCF(cfAcc, cfR);
+        why.push(...subWhy, `${{r.id}} probó ${{meta}} (CF=${{cfR.toFixed(4)}})`);
+      }}
+    }}
+    return cfAcc !== null && cfAcc > 0 ? {{ ok: true, cf: cfAcc, why }} : {{ ok: false, cf: 0, why: [`No se pudo probar ${{meta}}`] }};
+  }}
+
+  const meta = document.getElementById('seMeta').value;
+  const bwd = backward(meta, new Set());
+  document.getElementById('seOut').innerHTML =
+    `<p><b>Forward Chaining (${{trazaFwd.length}} reglas disparadas):</b></p>` +
+    (trazaFwd.length ? `<ul>${{trazaFwd.map(x => `<li>${{x}}</li>`).join('')}}</ul>` : `<p style="color:var(--warn)">Sin reglas aplicables con los hechos actuales.</p>`) +
+    `<p><b>Backward Chaining sobre <code>${{meta}}</code>:</b> ` +
+    (bwd.ok ? `<span style="color:var(--ok)">DEMOSTRADA (CF=${{bwd.cf.toFixed(4)}})</span>` : `<span style="color:var(--err)">NO DEMOSTRADA</span>`) +
+    `</p><ul>${{bwd.why.map(x => `<li>${{x}}</li>`).join('')}}</ul>`;
+}}
+
+renderDocList(); renderExperto(); renderLogic(); calcBinario(); runRegex(); runChmod(); runPid(); renderQuiz(); renderFmhy();
 </script>
 </body>
 </html>

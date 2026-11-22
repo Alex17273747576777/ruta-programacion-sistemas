@@ -28,12 +28,15 @@ def main() -> int:
         print("FALLO: docs/index.html contiene enlaces relativos href=\"../\" rotos para GitHub Pages")
         return 1
     modulos = cargar_modulos()
-    if len(modulos) < 23:
-        print(f"FALLO: se esperaban al menos 23 módulos embebidos, hay {len(modulos)}")
+    if len(modulos) < 25:
+        print(f"FALLO: se esperaban al menos 25 módulos embebidos, hay {len(modulos)}")
+        return 1
+    if 'id="experto"' not in actual or 'runExperto()' not in actual:
+        print("FALLO: falta el playground interactivo de Motor Experto en docs/index.html")
         return 1
     preguntas = json.loads((RAIZ / "quizzes" / "banco_preguntas.json").read_text(encoding="utf-8"))
-    if len(preguntas) < 30:
-        print(f"FALLO: se esperaban al menos 30 preguntas en el quiz, hay {len(preguntas)}")
+    if len(preguntas) < 36:
+        print(f"FALLO: se esperaban al menos 36 preguntas en el quiz, hay {len(preguntas)}")
         return 1
     print(
         f"OK: docs/index.html sincronizado, sin 404 relativos, con {len(modulos)} módulos embebidos "
